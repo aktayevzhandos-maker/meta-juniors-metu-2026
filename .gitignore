@@ -13,3 +13,9 @@ dist/
 tmp/
 .DS_Store
 Thumbs.db
+.agents/skills/impeccable/scripts/bin/
+*.sqlite3
+*.sqlite3-journal
+backend/.coverage
+backend/.wheels/
+data/evaluation-report.json

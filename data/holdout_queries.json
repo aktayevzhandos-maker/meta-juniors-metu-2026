@@ -1,0 +1,27 @@
+{
+  "description": "Separately worded paraphrase and constraint regression set. Same synthetic registry, NOT a blind independent benchmark. Never imported by the search engine.",
+  "queries": [
+    {"id":"paraphrase-1","query":"Кого посоветуете для clinical trials и good manufacturing practice в Almaty?","relevant_ids":["EXP-001"]},
+    {"id":"paraphrase-2","query":"В Алматы нужен эксперт: надлежащая производственная практика, клинические испытания","relevant_ids":["EXP-001"]},
+    {"id":"paraphrase-3","query":"В Астане ищем специалиста по программированию контроллеров и скада","relevant_ids":["EXP-016"]},
+    {"id":"paraphrase-4","query":"ПЛК, диспетчеризация производства, Астана — нужен опыт от 5 лет","relevant_ids":["EXP-016"]},
+    {"id":"paraphrase-5","query":"В Караганде требуются САПР и метод конечных элементов","relevant_ids":["EXP-031"]},
+    {"id":"paraphrase-6","query":"Кто поможет: finite element analysis, проектирование деталей, Karaganda","relevant_ids":["EXP-031"]},
+    {"id":"paraphrase-7","query":"Для обработки естественного языка ищу человека с питоном, Шымкент","relevant_ids":["EXP-046"]},
+    {"id":"paraphrase-8","query":"NLP и Python, Shymkent, минимум 7 лет","relevant_ids":["EXP-046"]},
+    {"id":"paraphrase-9","query":"Тестирование на проникновение и защита сетей в Атырау","relevant_ids":["EXP-061"]},
+    {"id":"paraphrase-10","query":"Атырау, pentest и network security","relevant_ids":["EXP-061"]},
+    {"id":"paraphrase-11","query":"В Павлодаре ищем СДО и instructional design","relevant_ids":["EXP-076"]},
+    {"id":"paraphrase-12","query":"Педагогический дизайн и система дистанционного обучения, Павлодар","relevant_ids":["EXP-076"]},
+    {"id":"paraphrase-13","query":"Аудитор СМК и технических регламентов, Астана","relevant_ids":["EXP-106"]},
+    {"id":"paraphrase-14","query":"Нужен в Astana: ISO 9001 и EAC","relevant_ids":["EXP-106"]},
+    {"id":"novel-1","query":"GMP и валидация процессов, Астана","relevant_ids":["EXP-002"]},
+    {"id":"novel-2","query":"Прогнозирование поломок и IIoT в Атырау","relevant_ids":["EXP-019"]},
+    {"id":"novel-3","query":"Возобновляемая энергетика и ESG, Атырау","relevant_ids":["EXP-033"]},
+    {"id":"novel-4","query":"SQL и ETL, Павлодар","relevant_ids":["EXP-048"]},
+    {"id":"novel-5","query":"SOC и Python в Павлодаре","relevant_ids":["EXP-062"]},
+    {"id":"novel-6","query":"Робототехника и STEM в Алматы","relevant_ids":["EXP-077"]},
+    {"id":"novel-7","query":"Бережливое производство и шесть сигм в Алматы","relevant_ids":["EXP-091"]}
+  ],
+  "negative_queries": ["Нужен специалист по квантовой телепортации", "Эксперт по археологии майя"]
+}

@@ -1,0 +1,12 @@
+{
+  "description": "Team-authored reference labels for the synthetic registry; not organizer ground truth. Multiple profiles can be relevant.",
+  "queries": [
+    {"id":"ref-pharma","query":"Нужен специалист по GMP и клиническим исследованиям из Алматы","relevant_ids":["EXP-001"],"rationale":"GMP + клинические исследования, Алматы"},
+    {"id":"ref-automation","query":"Ищу инженера PLC и SCADA в Астане","relevant_ids":["EXP-016"],"rationale":"PLC + SCADA, Астана"},
+    {"id":"ref-engineering","query":"Нужен CAD и прочностные расчеты в Караганде","relevant_ids":["EXP-031"],"rationale":"CAD + FEA, Караганда"},
+    {"id":"ref-it","query":"Эксперт по Python и NLP из Шымкента","relevant_ids":["EXP-046"],"rationale":"Python + NLP, Шымкент"},
+    {"id":"ref-cyber","query":"Нужен специалист по пентесту и сетевой безопасности в Атырау","relevant_ids":["EXP-061"],"rationale":"Пентест + безопасность сетей, Атырау"},
+    {"id":"ref-education","query":"Нужен LMS и педагогический дизайн в Павлодаре","relevant_ids":["EXP-076"],"rationale":"LMS + Instructional Design, Павлодар"},
+    {"id":"ref-quality","query":"Эксперт по ISO 9001 и сертификации ЕАЭС в Астане","relevant_ids":["EXP-106"],"rationale":"ISO 9001 + Сертификация ЕАЭС, Астана"}
+  ]
+}
