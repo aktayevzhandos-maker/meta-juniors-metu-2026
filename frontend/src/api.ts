@@ -4,6 +4,6 @@ export type SearchResponse={query:string;status:'ok'|'partial'|'no_matches';resu
 export type Health={status:string;expert_count:number;database:string};
 export async function api<T>(path:string,signal?:AbortSignal,body?:unknown):Promise<T>{
  const response=await fetch(`/api/v1/${path}`,{signal,method:body?'POST':'GET',headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined});
- if(!response.ok){if(response.status===503)throw new Error('Реестр пока недоступен. Проверьте запуск сервисов и загрузку данных.');if(response.status===400)throw new Error('Проверьте запрос: от 3 до 1000 символов, с названием компетенции.');throw new Error(`Не удалось получить ответ (HTTP ${response.status}). Попробуйте ещё раз.`)}
+ if(!response.ok){if(response.status===503)throw new Error('Реестр пока недоступен. Проверьте запуск сервисов и загрузку данных.');if(response.status===400){const details=await response.json();throw new Error(Object.values(details).flat().join(' ')||'Проверьте условия запроса.')}throw new Error(`Не удалось получить ответ (HTTP ${response.status}). Попробуйте ещё раз.`)}
  return response.json() as Promise<T>;
 }

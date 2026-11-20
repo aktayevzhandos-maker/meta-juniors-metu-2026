@@ -32,3 +32,7 @@ REST_FRAMEWORK = {
     'UNAUTHENTICATED_USER': None,
 }
 DATA_UPLOAD_MAX_MEMORY_SIZE = 2 * 1024 * 1024
+
+OLLAMA_URL = os.getenv('OLLAMA_URL', 'http://host.docker.internal:11434')
+OLLAMA_MODEL = os.getenv('OLLAMA_MODEL', 'qwen2.5:1.5b')
+OLLAMA_TIMEOUT = float(os.getenv('OLLAMA_TIMEOUT', '90'))

@@ -18,7 +18,7 @@ services:
     networks: [database]
 
   backend:
-    image: aiid-experts-backend:dev
+    image: aiid-integration-backend:dev
     pull_policy: never
     build:
       context: .
@@ -26,6 +26,9 @@ services:
     ports:
       - "127.0.0.1:${API_PORT:-8000}:8000"
     environment:
+      OLLAMA_URL: ${OLLAMA_URL:-http://host.docker.internal:11434}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5:1.5b}
+      OLLAMA_TIMEOUT: ${OLLAMA_TIMEOUT:-90}
       POSTGRES_HOST: db
       POSTGRES_PORT: "5432"
       POSTGRES_DB: ${POSTGRES_DB:-aiid}
@@ -46,7 +49,7 @@ services:
     networks: [database, web]
 
   frontend:
-    image: aiid-experts-frontend:dev
+    image: aiid-integration-frontend:dev
     pull_policy: never
     build:
       context: ./frontend

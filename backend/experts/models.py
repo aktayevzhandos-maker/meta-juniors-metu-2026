@@ -25,3 +25,14 @@ class Expert(models.Model):
 
     def __str__(self):
         return f'{self.id}: {self.full_name}'
+
+class SearchTotals(models.Model):
+    id = models.PositiveSmallIntegerField(primary_key=True, default=1)
+    request_count = models.PositiveBigIntegerField(default=0)
+    started_at = models.DateTimeField(null=True)
+    last_request_at = models.DateTimeField(null=True)
+
+
+class SkillDemand(models.Model):
+    skill = models.CharField(primary_key=True, max_length=100)
+    request_count = models.PositiveBigIntegerField(default=0)

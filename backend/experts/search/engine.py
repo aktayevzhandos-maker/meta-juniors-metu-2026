@@ -3,16 +3,17 @@ import math
 import re
 import unicodedata
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from functools import lru_cache
 from threading import local
 
 import snowballstemmer
 
+from .multilingual import normalize_query, language_of
 from .taxonomy import CITIES, INDUSTRIES, SKILLS, STOPWORDS
 
 STEMMERS = local()
-TOKEN_PATTERN = re.compile(r'[a-zа-яё0-9]+', re.I)
+TOKEN_PATTERN = re.compile(r'[a-zа-яёәғқңөұүһі0-9]+', re.I)
 
 @lru_cache(maxsize=8192)
 def stem(token):
@@ -62,15 +63,18 @@ class ParsedQuery:
     excluded_cities: tuple = ()
     excluded_industries: tuple = ()
     errors: tuple = ()
+    language: str = 'ru'
 
     def as_dict(self):
         return {'skills': list(self.skills), 'industries': list(self.industries), 'cities': list(self.cities),
                 'min_years_experience': self.min_years, 'excluded_skills': list(self.excluded_skills),
                 'unrecognized_terms': list(self.unrecognized_terms),
                 'max_years_experience': self.max_years, 'excluded_cities': list(self.excluded_cities),
-                'excluded_industries': list(self.excluded_industries), 'errors': list(self.errors)}
+                'excluded_industries': list(self.excluded_industries), 'errors': list(self.errors), 'language': self.language}
 
 def parse_query(query):
+    language = language_of(query)
+    query = normalize_query(query)
     query_tokens = tokens(query)
     skill_table, industry_table, city_table = alias_tables()
     skills, skill_terms = detect(query_tokens, skill_table)
@@ -147,7 +151,7 @@ def parse_query(query):
     keywords = tuple(word for word in dict.fromkeys(lexical_tokens(query)) if word not in negated_terms | operator_terms | experience_terms)
     return ParsedQuery(tuple(skills), tuple(industries), tuple(cities), min_years,
                        tuple(dict.fromkeys(excluded)), keywords, unknown, max_years,
-                       tuple(dict.fromkeys(excluded_cities)), tuple(dict.fromkeys(excluded_industries)), tuple(errors))
+                       tuple(dict.fromkeys(excluded_cities)), tuple(dict.fromkeys(excluded_industries)), tuple(errors), language)
 
 class BM25:
     def __init__(self, documents, k1=1.5, b=0.75):
@@ -186,14 +190,27 @@ class SearchEngine:
             documents.append(lexical_tokens(text))
         self.bm25 = BM25(documents)
 
-    def search(self, query, limit=3, industry=None):
+    def search(self, query, limit=3, industry=None, city=None, min_years_experience=None, max_years_experience=None):
         parsed = parse_query(query)
+        if city:
+            conflict = city in parsed.excluded_cities or (parsed.cities and city not in parsed.cities)
+            errors = (*parsed.errors, f'Противоречие: выбран город {city}, а текст задаёт другое условие города.') if conflict else parsed.errors
+            parsed = replace(parsed, cities=(city,), errors=errors)
+        lower = max(value for value in [parsed.min_years, min_years_experience] if value is not None) if parsed.min_years is not None or min_years_experience is not None else None
+        upper = min(value for value in [parsed.max_years, max_years_experience] if value is not None) if parsed.max_years is not None or max_years_experience is not None else None
+        parsed = replace(parsed, min_years=lower, max_years=upper)
+        constrained = bool(city or industry or parsed.skills or parsed.cities or parsed.industries or parsed.excluded_skills or parsed.excluded_cities or parsed.excluded_industries or lower is not None or upper is not None)
         results = []
         for i, expert in enumerate(self.experts):
             if parsed.errors:
                 continue
             if industry and expert.industry != industry:
                 continue
+            if city and expert.city != city:
+                continue
+            if min_years_experience is not None or max_years_experience is not None:
+                if (lower is not None and expert.years_experience < lower) or (upper is not None and expert.years_experience > upper):
+                    continue
             profile = self.profile_skills[i]
             if set(parsed.excluded_skills) & profile:
                 continue
@@ -205,10 +222,12 @@ class SearchEngine:
             # Explicit named skills are required evidence, not just incidental city overlap.
             if parsed.skills and not matched:
                 continue
-            if not parsed.skills and lexical <= 0:
+            if not parsed.skills and lexical <= 0 and not (constrained and not parsed.unrecognized_terms):
                 continue
             if not parsed.skills and parsed.unrecognized_terms and not (set(tokens(' '.join(parsed.unrecognized_terms))) & self.bm25.counts[i].keys()):
                 # A known city alone must not manufacture expertise in an unknown specialty.
+                continue
+            if not parsed.skills and not parsed.unrecognized_terms and parsed.cities and expert.city not in parsed.cities:
                 continue
             city_ok = not parsed.cities or expert.city in parsed.cities
             industry_ok = not parsed.industries or expert.industry in parsed.industries
@@ -255,7 +274,7 @@ class SearchEngine:
             if parsed.max_years is not None and maximum_ok:
                 reasons.append(f'Опыт {expert.years_experience} лет не превышает указанный максимум {parsed.max_years}.')
             if not matched:
-                reasons.append('Найдено лексическое совпадение с текстом профиля; требуется проверка компетенций.')
+                reasons.append('Найдено лексическое совпадение с текстом профиля; требуется проверка компетенций.' if lexical > 0 else 'Сопоставление по распознанным условиям; компетенции не заданы.')
             warnings = list(missing_requirements)
             if expert.availability != 'available':
                 warnings.append('Доступность: ' + expert.get_availability_display() + '.')
@@ -285,7 +304,7 @@ class SearchEngine:
         if parsed.unrecognized_terms:
             warnings.append('Часть слов обработана только лексически. Процент покрывает распознанные требования, а не весь смысл запроса.')
         if not parsed.skills:
-            warnings.append('Компетенции из словаря не распознаны: используется лексический поиск по профилям.')
+            warnings.append('Подбор по условиям без указанной компетенции. Уточните навыки для точной оценки.' if constrained and not parsed.unrecognized_terms else 'Компетенции из словаря не распознаны: используется лексический поиск по профилям.')
         return {'query': query, 'status': status, 'parsed_query': parsed.as_dict(), 'results': selected,
                 'warnings': warnings, 'candidate_count': len(results), 'total_experts': len(self.experts),
                 'method': 'bm25+skill-taxonomy-v2', 'semantic_embeddings_used': False,

@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+from .analytics import record_search
 from .models import Expert
 from .search.engine import SearchEngine
 from .search.taxonomy import INDUSTRIES
@@ -32,6 +33,7 @@ def search(request):
     payload = engine.search(**values)
     for result in payload['results']:
         result['expert'] = ExpertSerializer(result['expert']).data
+    record_search(payload['parsed_query']['skills'])
     payload['elapsed_ms'] = round((perf_counter() - started) * 1000, 3)
     return Response(payload)
 
@@ -60,3 +62,8 @@ def experts(request):
         queryset = queryset.filter(industry=industry)
     return Response({'count': queryset.count(), 'offset': offset, 'limit': limit,
                      'results': ExpertSerializer(queryset[offset:offset + limit], many=True).data, 'is_synthetic': True})
+
+
+@api_view(['GET'])
+def cities(request):
+    return Response({'cities': list(Expert.objects.order_by('city').values_list('city', flat=True).distinct()), 'is_synthetic': True})

@@ -29,7 +29,7 @@ class RegistryTests(TestCase):
         self.assertEqual(len({row['id'] for row in rows}), 120)
         self.assertEqual(len({row['industry'] for row in rows}), 8)
         self.assertEqual(len({row['city'] for row in rows}), 6)
-        self.assertTrue(all(row['is_synthetic'] == 'true' and row['full_name'].startswith('Синтетический') for row in rows))
+        self.assertTrue(all(row['is_synthetic'] == 'true' and not row['full_name'].startswith('Синтетический') for row in rows))
 
     def test_utf8_bom_upsert_and_idempotency(self):
         data = csv_bytes(generate_rows(), bom=True)

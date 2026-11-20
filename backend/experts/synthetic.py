@@ -55,6 +55,19 @@ GROUPS = [
     ]),
 ]
 
+def synthetic_name(number):
+    given = [('Айдана', True), ('Данияр', False), ('Алия', True), ('Ерлан', False),
+             ('Жанар', True), ('Тимур', False), ('Мадина', True), ('Арман', False),
+             ('Аружан', True), ('Руслан', False), ('Сауле', True), ('Нурлан', False)]
+    surnames = [('Омаров', 'Омарова'), ('Сериков', 'Серикова'), ('Ахметов', 'Ахметова'),
+                ('Ибраев', 'Ибраева'), ('Нуртаев', 'Нуртаева'), ('Садыков', 'Садыкова'),
+                ('Калиев', 'Калиева'), ('Жумабаев', 'Жумабаева'), ('Абдрахманов', 'Абдрахманова'),
+                ('Бекетов', 'Бекетова')]
+    name, female = given[(number - 1) % len(given)]
+    surname = surnames[((number - 1) // len(given)) % len(surnames)][int(female)]
+    return f'{name} {surname}'
+
+
 def generate_rows(seed=2026):
     rng = random.Random(seed)
     cities = ['Алматы', 'Астана', 'Караганда', 'Шымкент', 'Атырау', 'Павлодар']
@@ -67,7 +80,7 @@ def generate_rows(seed=2026):
             skills = recipes[offset % len(recipes)]
             availability = 'available' if offset % 5 == 0 else rng.choice(['available', 'available', 'limited', 'busy'])
             rows.append({
-                'id': f'EXP-{number:03d}', 'full_name': f'Синтетический эксперт {number:03d}',
+                'id': f'EXP-{number:03d}', 'full_name': synthetic_name(number),
                 'title': title, 'industry': industry, 'city': cities[(offset + group_index) % len(cities)],
                 'skills': '|'.join(skills), 'languages': 'Русский|Казахский' if number % 3 else 'Русский|Английский',
                 'years_experience': 8 + offset % 15, 'availability': availability,

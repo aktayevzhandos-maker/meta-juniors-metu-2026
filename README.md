@@ -45,3 +45,17 @@ docker compose exec -T backend python manage.py evaluate_search --queries /app/d
 Для разработки: `npm.cmd run dev --prefix frontend`; Vite проксирует `/api` в localhost:8000. Для Docker сначала выполните npm ci/build выше (Node.js 24); готовые dist-файлы не хранятся в Git. Frontend-контейнер раздаёт собранные локальные ресурсы и проксирует API в Django на том же origin, без CORS и внешних CDN. Это сервер для локальной демонстрации, не production gateway. После изменения UI: повторить npm build, `docker compose build frontend` и `docker compose up -d --no-deps frontend`.
 
 Доступны текстовый поиск, отраслевой фильтр, доказательства и недостающие условия, профиль и сравнение 2–3 кандидатов. Qwen не обязательна. Синтетическая пометка и пояснение процента видны в UI. Физическое отключение интернета в браузерной проверке ещё не выполнялось; все необходимые ресурсы включены в сборку.
+
+## Интеграционная копия RAG
+
+Worktree от origin/main 476e846, ветка integration/aiid-rag. Существующий проект на 8080 работает отдельно. Из корня исходного репозитория:
+
+```powershell
+docker compose -p aiid-integration --project-directory tmp/aiid-integration up -d --no-build --pull never
+```
+
+Сайт http://localhost:8081, API http://localhost:8011. Образы aiid-integration-backend:dev и aiid-integration-frontend:dev, отдельный том aiid-integration_postgres-data. Настройки в игнорируемой .env worktree. Используется скачанная qwen2.5:1.5b через host.docker.internal:11434. Сборка изменений UI: npm ci и npm run build в frontend, затем docker compose -p aiid-integration up -d --build из worktree.
+
+POST /api/v1/compare/ принимает query, industry, limit, использует BM25 main с limit=3. Ответ status, comparison/detail, expert_ids, model, elapsed_ms. Карточки и исходные объяснения сохраняются при ошибке модели. Генеративный текст необходимо сверять с фактами анкет.
+
+Qwen 1.5B в свободном тексте путала опыт между профилями. Поэтому сравнение использует constrained JSON: сервер вычисляет общие навыки и фактические отличия, модель возвращает только допустимые формулировки. Это проверяемое изложение анкет с ограниченной свободой генерации.

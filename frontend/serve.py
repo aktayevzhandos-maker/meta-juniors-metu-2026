@@ -17,7 +17,7 @@ class Handler(SimpleHTTPRequestHandler):
             request = urllib.request.Request('http://backend:8000' + self.path, data=body,
                 headers={'Content-Type': 'application/json', 'Host': 'localhost'}, method=self.command)
             try:
-                response = urllib.request.urlopen(request, timeout=35)
+                response = urllib.request.urlopen(request, timeout=125)
             except urllib.error.HTTPError as error:
                 response = error
             with response:
@@ -35,6 +35,8 @@ class Handler(SimpleHTTPRequestHandler):
         if self.path.startswith('/api/'):
             self.proxy()
         else:
+            if self.path.split('?')[0] in {'/', '/dashboard', '/dashboard/', '/dashboard/analytics', '/dashboard/analytics/', '/dashboard/catalog', '/dashboard/catalog/'}:
+                self.path = '/index.html'
             super().do_GET()
 
     def do_POST(self):
