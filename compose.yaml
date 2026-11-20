@@ -45,6 +45,23 @@ services:
       retries: 12
     networks: [database, web]
 
+  frontend:
+    image: aiid-experts-frontend:dev
+    pull_policy: never
+    build:
+      context: ./frontend
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-5173}:8080"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 12
+    networks: [web]
+
 volumes:
   postgres-data:
 

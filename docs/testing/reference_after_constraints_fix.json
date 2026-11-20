@@ -1,0 +1,114 @@
+{
+  "dataset": "reference_queries.json",
+  "query_count": 7,
+  "hit_at_3": 1.0,
+  "threshold_passed": true,
+  "network_blocked": true,
+  "latency_scope": "in-process Django API including PostgreSQL connection/queries, index construction and serialization; excludes HTTP transport",
+  "median_ms": 13.38,
+  "p95_ms": 46.449,
+  "max_ms": 46.449,
+  "under_30_seconds": true,
+  "results": [
+    {
+      "id": "ref-pharma",
+      "query": "Нужен специалист по GMP и клиническим исследованиям из Алматы",
+      "expected": [
+        "EXP-001"
+      ],
+      "top3": [
+        "EXP-001",
+        "EXP-011",
+        "EXP-006"
+      ],
+      "hit": true,
+      "elapsed_ms": 46.449
+    },
+    {
+      "id": "ref-automation",
+      "query": "Ищу инженера PLC и SCADA в Астане",
+      "expected": [
+        "EXP-016"
+      ],
+      "top3": [
+        "EXP-016",
+        "EXP-026",
+        "EXP-021"
+      ],
+      "hit": true,
+      "elapsed_ms": 13.38
+    },
+    {
+      "id": "ref-engineering",
+      "query": "Нужен CAD и прочностные расчеты в Караганде",
+      "expected": [
+        "EXP-031"
+      ],
+      "top3": [
+        "EXP-031",
+        "EXP-041",
+        "EXP-036"
+      ],
+      "hit": true,
+      "elapsed_ms": 13.236
+    },
+    {
+      "id": "ref-it",
+      "query": "Эксперт по Python и NLP из Шымкента",
+      "expected": [
+        "EXP-046"
+      ],
+      "top3": [
+        "EXP-046",
+        "EXP-056",
+        "EXP-051"
+      ],
+      "hit": true,
+      "elapsed_ms": 12.046
+    },
+    {
+      "id": "ref-cyber",
+      "query": "Нужен специалист по пентесту и сетевой безопасности в Атырау",
+      "expected": [
+        "EXP-061"
+      ],
+      "top3": [
+        "EXP-061",
+        "EXP-071",
+        "EXP-066"
+      ],
+      "hit": true,
+      "elapsed_ms": 12.617
+    },
+    {
+      "id": "ref-education",
+      "query": "Нужен LMS и педагогический дизайн в Павлодаре",
+      "expected": [
+        "EXP-076"
+      ],
+      "top3": [
+        "EXP-076",
+        "EXP-089",
+        "EXP-086"
+      ],
+      "hit": true,
+      "elapsed_ms": 20.323
+    },
+    {
+      "id": "ref-quality",
+      "query": "Эксперт по ISO 9001 и сертификации ЕАЭС в Астане",
+      "expected": [
+        "EXP-106"
+      ],
+      "top3": [
+        "EXP-106",
+        "EXP-116",
+        "EXP-111"
+      ],
+      "hit": true,
+      "elapsed_ms": 15.669
+    }
+  ],
+  "negative_results": [],
+  "limitation": "Team-authored synthetic data and labels. Does not establish accuracy on unseen jury queries."
+}

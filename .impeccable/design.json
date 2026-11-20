@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-20T15:09:38.8558334+05:00",
+  "title": "Design System: AIID Expert Search",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Forest Green",
+        "tonalRamp": [
+          "oklch(15% .02 165)",
+          "oklch(25% .04 165)",
+          "oklch(35% .06 165)",
+          "oklch(47% .07 165)",
+          "oklch(59% .07 165)",
+          "oklch(71% .06 165)",
+          "oklch(83% .04 165)",
+          "oklch(95% .01 165)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Deep Forest",
+        "tonalRamp": [
+          "oklch(15% .02 165)",
+          "oklch(25% .04 165)",
+          "oklch(35% .06 165)",
+          "oklch(47% .07 165)",
+          "oklch(59% .07 165)",
+          "oklch(71% .06 165)",
+          "oklch(83% .04 165)",
+          "oklch(95% .01 165)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "tonalRamp": [
+          "oklch(15% .01 160)",
+          "oklch(25% .02 160)",
+          "oklch(35% .03 160)",
+          "oklch(47% .03 160)",
+          "oklch(59% .03 160)",
+          "oklch(71% .025 160)",
+          "oklch(83% .015 160)",
+          "oklch(95% .005 160)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Sage Ink",
+        "tonalRamp": [
+          "oklch(15% .005 155)",
+          "oklch(25% .015 155)",
+          "oklch(35% .025 155)",
+          "oklch(47% .03 155)",
+          "oklch(59% .03 155)",
+          "oklch(71% .025 155)",
+          "oklch(83% .015 155)",
+          "oklch(95% .005 155)"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Sage Paper",
+        "tonalRamp": [
+          "oklch(15% .003 140)",
+          "oklch(25% .006 140)",
+          "oklch(35% .01 140)",
+          "oklch(47% .012 140)",
+          "oklch(59% .012 140)",
+          "oklch(71% .01 140)",
+          "oklch(83% .007 140)",
+          "oklch(95% .003 140)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "White Dossier",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(47% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(71% 0 0)",
+          "oklch(83% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "sidebar": {
+        "role": "neutral",
+        "displayName": "Sidebar Sage",
+        "tonalRamp": [
+          "oklch(15% .003 135)",
+          "oklch(25% .008 135)",
+          "oklch(35% .012 135)",
+          "oklch(47% .018 135)",
+          "oklch(59% .018 135)",
+          "oklch(71% .015 135)",
+          "oklch(83% .01 135)",
+          "oklch(95% .005 135)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Sage Divider",
+        "tonalRamp": [
+          "oklch(15% .003 145)",
+          "oklch(25% .008 145)",
+          "oklch(35% .012 145)",
+          "oklch(47% .018 145)",
+          "oklch(59% .018 145)",
+          "oklch(71% .015 145)",
+          "oklch(83% .01 145)",
+          "oklch(95% .005 145)"
+        ]
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Soft Wash",
+        "tonalRamp": [
+          "oklch(15% .003 145)",
+          "oklch(25% .008 145)",
+          "oklch(35% .015 145)",
+          "oklch(47% .02 145)",
+          "oklch(59% .02 145)",
+          "oklch(71% .018 145)",
+          "oklch(83% .012 145)",
+          "oklch(95% .005 145)"
+        ]
+      },
+      "tag": {
+        "role": "neutral",
+        "displayName": "Recognized Sage",
+        "tonalRamp": [
+          "oklch(15% .003 135)",
+          "oklch(25% .008 135)",
+          "oklch(35% .015 135)",
+          "oklch(47% .02 135)",
+          "oklch(59% .02 135)",
+          "oklch(71% .018 135)",
+          "oklch(83% .012 135)",
+          "oklch(95% .005 135)"
+        ]
+      },
+      "focus": {
+        "role": "secondary",
+        "displayName": "Amber Focus",
+        "tonalRamp": [
+          "oklch(15% .02 75)",
+          "oklch(25% .04 75)",
+          "oklch(35% .07 75)",
+          "oklch(47% .1 75)",
+          "oklch(59% .12 75)",
+          "oklch(71% .1 75)",
+          "oklch(83% .06 75)",
+          "oklch(95% .02 75)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Workspace Headline",
+        "purpose": "Main task heading; no separate display face."
+      },
+      "title": {
+        "displayName": "Section Title",
+        "purpose": "Results and comparison sections."
+      },
+      "body": {
+        "displayName": "Workspace Body",
+        "purpose": "Task guidance and factual explanations."
+      },
+      "label": {
+        "displayName": "Form Label",
+        "purpose": "Visible labels and compact emphasis."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "loading-spin",
+        "value": "spin 1s linear infinite",
+        "purpose": "Loading indicator; disabled for reduced motion."
+      },
+      {
+        "name": "anchor-scroll",
+        "value": "smooth",
+        "purpose": "Section navigation; disabled for reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1600px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1200px"
+      },
+      {
+        "name": "icon-rail",
+        "value": "800px"
+      },
+      {
+        "name": "phone",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Submit an expert query.",
+      "html": "<button class=\"ds-primary\">Найти экспертов</button>",
+      "css": ".ds-primary{font:600 14px 'Segoe UI',Arial,sans-serif;background:var(--green,#154d40);color:white;padding:13px 22px;border:0;border-radius:8px;min-height:46px;cursor:pointer}.ds-primary:hover:enabled{background:#0a382d}.ds-primary:focus-visible{outline:3px solid #b07728;outline-offset:4px}.ds-primary:disabled{opacity:.65;cursor:wait}"
+    },
+    {
+      "name": "Example Query",
+      "kind": "button",
+      "refersTo": "button-example",
+      "description": "Start from a concrete sample task.",
+      "html": "<button class=\"ds-example\">PLC и SCADA в Астане</button>",
+      "css": ".ds-example{font:12px 'Segoe UI',Arial,sans-serif;color:var(--ink,#233c34);padding:8px 10px;border:1px solid var(--line,#dce4de);border-radius:6px;text-align:left;background:white;cursor:pointer}.ds-example:hover{border-color:#759681;background:#eaf1e8}.ds-example:focus-visible{outline:3px solid #b07728;outline-offset:4px}"
+    },
+    {
+      "name": "Task Query",
+      "kind": "input",
+      "refersTo": "query-field",
+      "description": "Labeled multiline natural-language task field.",
+      "html": "<label class=\"ds-query-label\" for=\"ds-query\">Какого эксперта вы ищете?</label><textarea class=\"ds-query\" id=\"ds-query\" placeholder=\"Компетенции, город, опыт — своими словами\"></textarea>",
+      "css": ".ds-query-label{display:block;font:650 14px 'Segoe UI',Arial,sans-serif;color:var(--ink,#233c34);margin-bottom:14px}.ds-query{font:17px/1.6 'Segoe UI',Arial,sans-serif;width:100%;min-height:62px;resize:vertical;border:0;background:transparent;color:var(--ink,#233c34);caret-color:var(--green,#154d40);padding:2px}.ds-query::placeholder{color:#65786d}.ds-query:focus-visible{outline:3px solid #b07728;outline-offset:4px}"
+    },
+    {
+      "name": "Workspace Navigation",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "Selected workspace destination with inline stroke icon.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Разделы\"><a href=\"#main\" aria-current=\"page\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 5 5\"/></svg>Поиск экспертов</a></nav>",
+      "css": ".ds-nav{font:14px 'Segoe UI',Arial,sans-serif}.ds-nav a{display:flex;gap:11px;align-items:center;padding:13px 12px;border-radius:8px;text-decoration:none;background:var(--green,#154d40);color:white}.ds-nav a:focus-visible{outline:3px solid #b07728;outline-offset:4px}"
+    },
+    {
+      "name": "Recognized Requirement",
+      "kind": "chip",
+      "refersTo": "recognized-tag",
+      "description": "A parsed requirement displayed as factual text.",
+      "html": "<span class=\"ds-tag\">SCADA</span>",
+      "css": ".ds-tag{display:inline-block;font:12px 'Segoe UI',Arial,sans-serif;color:var(--ink,#233c34);padding:5px 9px;background:#e5ede4;border-radius:4px}"
+    },
+    {
+      "name": "Expert Dossier",
+      "kind": "card",
+      "refersTo": "expert-card",
+      "description": "Candidate evidence surface; preview uses a generic synthetic profile label.",
+      "html": "<article class=\"ds-card\"><span class=\"ds-rank\">Место 1 · синтетический профиль</span><h3>Эксперт демонстрационного реестра</h3><p>Компетенции и основания выбора</p><button>Открыть профиль</button></article>",
+      "css": ".ds-card{font-family:'Segoe UI',Arial,sans-serif;color:var(--ink,#233c34);border:1px solid var(--line,#dce4de);background:white;border-radius:14px;padding:22px}.ds-rank{font-size:11px;color:var(--muted,#5e7169)}.ds-card h3{font-size:18px;font-weight:650;letter-spacing:-.025em;line-height:1.35;margin:20px 0 8px}.ds-card p{font-size:13px;line-height:1.5;color:var(--muted,#5e7169);margin:0 0 20px}.ds-card button{font:650 12px 'Segoe UI',Arial,sans-serif;color:var(--green,#154d40);border:0;background:transparent;min-height:38px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}.ds-card button:focus-visible{outline:3px solid #b07728;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Comparison Dossier",
+    "overview": "A quiet operational workspace built from sage paper, forest-green controls and white expert dossiers. The density supports reading requirements, evidence and candidate differences in one session. No raster assets or portraits are used.\n\nThe system UI font stack supports offline operation and familiar forms. It is a deliberate workspace choice; there is no separate display typography role.",
+    "keyCharacteristics": [
+      "Sage canvas and white evidence surfaces.",
+      "Forest-green primary actions and selected navigation.",
+      "Explicit labels, factual status text and visible keyboard focus."
+    ],
+    "rules": [
+      {
+        "name": "The Evidence Accent Rule",
+        "body": "Forest green marks actions, selection and coverage; factual prose keeps the quieter ink colors.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper Layer Rule",
+        "body": "Use tonal separation and borders for workspace depth.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the sage-paper, white-dossier and forest-action relationship.",
+      "Do keep labels and factual text alongside color-coded status.",
+      "Do retain visible focus and reduced-motion support.",
+      "Do let long comparison content scroll horizontally on narrow screens."
+    ],
+    "donts": [
+      "Don't add fabricated portraits, contact details or decorative metric claims.",
+      "Don't describe coverage as a probability of suitability.",
+      "Don't introduce shadows as the default surface separator."
+    ]
+  }
+}

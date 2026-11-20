@@ -1,0 +1,4852 @@
+{
+  "git_head": "eb9b0be103a50c75361e308df7f6428ce228596a",
+  "working_tree_contains_uncommitted_frontend": true,
+  "manifest_sha256": "317b74f5d60cb4ea9747194e72564c394c3230a55eb96feba87cbb41a299156d",
+  "dataset_sha256": "ec8e9e8367de30c1c76ddac697cab1aa8c5f50a18b4e1f6ea2ee1fd03872ec54",
+  "scope": "Real localhost HTTP API, read-only production registry; no physical internet disconnection, no Qwen",
+  "positive_count": 20,
+  "hits": 20,
+  "hit_at_3": 1.0,
+  "negative_count": 5,
+  "negative_passed": 5,
+  "acceptance_passed": true,
+  "false_full_count": 0,
+  "evidence_errors": [],
+  "latency_ms": {
+    "median": 41.181,
+    "p95": 79.473,
+    "max": 99.407
+  },
+  "checks": [
+    {
+      "kind": "invalid_input",
+      "body": {},
+      "status": 400,
+      "passed": true
+    },
+    {
+      "kind": "invalid_input",
+      "body": {
+        "query": "12"
+      },
+      "status": 400,
+      "passed": true
+    },
+    {
+      "kind": "invalid_input",
+      "body": {
+        "query": "GMP",
+        "limit": 2
+      },
+      "status": 400,
+      "passed": true
+    },
+    {
+      "kind": "invalid_input",
+      "body": {
+        "query": "GMP",
+        "industry": "unknown"
+      },
+      "status": 400,
+      "passed": true
+    },
+    {
+      "kind": "industry_filter",
+      "passed": true
+    },
+    {
+      "kind": "availability_identical_profiles",
+      "comparable_pairs": 0,
+      "passed": null
+    },
+    {
+      "kind": "frontend_proxy",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "quality-lean",
+      "query": "Бережливое производство и ISO 9001, Алматы",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-091",
+        "EXP-101",
+        "EXP-096"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 79.473,
+      "response": {
+        "query": "Бережливое производство и ISO 9001, Алматы",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "Lean",
+            "ISO 9001"
+          ],
+          "industries": [
+            "Производство"
+          ],
+          "cities": [
+            "Алматы"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-091",
+              "full_name": "Синтетический эксперт 091",
+              "title": "Консультант производственных процессов",
+              "industry": "Производство",
+              "city": "Алматы",
+              "skills": [
+                "Lean",
+                "Six Sigma",
+                "ISO 9001"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 8,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Производство. Задачи: консультирование проектных команд. Компетенции: Lean, Six Sigma, ISO 9001.",
+              "is_synthetic": true
+            },
+            "score": 87.1122,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "Lean",
+              "ISO 9001"
+            ],
+            "matched_industries": [
+              "Производство"
+            ],
+            "profile_industry": "Производство",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: Lean, ISO 9001.",
+              "Отрасль профиля: Производство.",
+              "Город соответствует запросу: Алматы."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 12.3674,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "9001",
+              "iso",
+              "алмат",
+              "бережлив",
+              "производств"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-101",
+              "full_name": "Синтетический эксперт 101",
+              "title": "Консультант производственных процессов",
+              "industry": "Производство",
+              "city": "Атырау",
+              "skills": [
+                "Lean",
+                "Six Sigma",
+                "ISO 9001"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 18,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Производство. Задачи: консультирование проектных команд. Компетенции: Lean, Six Sigma, ISO 9001.",
+              "is_synthetic": true
+            },
+            "score": 62.5321,
+            "match_percent": 83.3,
+            "match_status": "partial",
+            "matched_skills": [
+              "Lean",
+              "ISO 9001"
+            ],
+            "matched_industries": [
+              "Производство"
+            ],
+            "profile_industry": "Производство",
+            "missing_requirements": [
+              "Город: Алматы"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Lean, ISO 9001.",
+              "Отрасль профиля: Производство."
+            ],
+            "warnings": [
+              "Город: Алматы"
+            ],
+            "score_components": {
+              "bm25": 10.6309,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "9001",
+              "iso",
+              "бережлив",
+              "производств"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-096",
+              "full_name": "Синтетический эксперт 096",
+              "title": "Консультант производственных процессов",
+              "industry": "Производство",
+              "city": "Павлодар",
+              "skills": [
+                "Lean",
+                "Six Sigma",
+                "ISO 9001"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 13,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Производство. Задачи: консультирование проектных команд. Компетенции: Lean, Six Sigma, ISO 9001.",
+              "is_synthetic": true
+            },
+            "score": 62.5321,
+            "match_percent": 83.3,
+            "match_status": "partial",
+            "matched_skills": [
+              "Lean",
+              "ISO 9001"
+            ],
+            "matched_industries": [
+              "Производство"
+            ],
+            "profile_industry": "Производство",
+            "missing_requirements": [
+              "Город: Алматы"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Lean, ISO 9001.",
+              "Отрасль профиля: Производство."
+            ],
+            "warnings": [
+              "Город: Алматы"
+            ],
+            "score_components": {
+              "bm25": 10.6309,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "9001",
+              "iso",
+              "бережлив",
+              "производств"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 27,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 29.592
+      }
+    },
+    {
+      "id": "clinical-gcp",
+      "query": "Клинические испытания по GCP в Караганде",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-003",
+        "EXP-013",
+        "EXP-011"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 29.572,
+      "response": {
+        "query": "Клинические испытания по GCP в Караганде",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "GCP",
+            "Клинические исследования"
+          ],
+          "industries": [],
+          "cities": [
+            "Караганда"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-003",
+              "full_name": "Синтетический эксперт 003",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Караганда",
+              "skills": [
+                "GCP",
+                "Клинические исследования",
+                "Фармаконадзор"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 10,
+              "availability": "limited",
+              "availability_label": "Ограниченно доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: внедрение и проверка решений. Компетенции: GCP, Клинические исследования, Фармаконадзор.",
+              "is_synthetic": true
+            },
+            "score": 79.1164,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "GCP",
+              "Клинические исследования"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: GCP, Клинические исследования.",
+              "Отрасль профиля: Фармацевтика.",
+              "Город соответствует запросу: Караганда."
+            ],
+            "warnings": [
+              "Доступность: Ограниченно доступен."
+            ],
+            "score_components": {
+              "bm25": 16.5993,
+              "skill_coverage": 1.0,
+              "availability_penalty": 3
+            },
+            "matched_terms": [
+              "gcp",
+              "испытан",
+              "караганд",
+              "клиническ"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-013",
+              "full_name": "Синтетический эксперт 013",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Алматы",
+              "skills": [
+                "GCP",
+                "Клинические исследования",
+                "Фармаконадзор"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 20,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: внедрение и проверка решений. Компетенции: GCP, Клинические исследования, Фармаконадзор.",
+              "is_synthetic": true
+            },
+            "score": 57.7469,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "GCP",
+              "Клинические исследования"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [
+              "Город: Караганда"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: GCP, Клинические исследования.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [
+              "Город: Караганда"
+            ],
+            "score_components": {
+              "bm25": 14.8097,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gcp",
+              "испытан",
+              "клиническ"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-011",
+              "full_name": "Синтетический эксперт 011",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Атырау",
+              "skills": [
+                "GMP",
+                "GCP",
+                "Клинические исследования",
+                "Аудит производства"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 18,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: консультирование проектных команд. Компетенции: GMP, GCP, Клинические исследования, Аудит производства.",
+              "is_synthetic": true
+            },
+            "score": 57.4568,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "GCP",
+              "Клинические исследования"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [
+              "Город: Караганда"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: GCP, Клинические исследования.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [
+              "Город: Караганда"
+            ],
+            "score_components": {
+              "bm25": 13.6089,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gcp",
+              "испытан",
+              "клиническ"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 6,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 24.011
+      }
+    },
+    {
+      "id": "drug-registration",
+      "query": "Регистрация препаратов и фармаконадзор, Шымкент",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-004",
+        "EXP-014",
+        "EXP-009"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 78.076,
+      "response": {
+        "query": "Регистрация препаратов и фармаконадзор, Шымкент",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "Фармаконадзор",
+            "Регистрация лекарств"
+          ],
+          "industries": [],
+          "cities": [
+            "Шымкент"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-004",
+              "full_name": "Синтетический эксперт 004",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Шымкент",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 11,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 82.4384,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "Фармаконадзор",
+              "Регистрация лекарств"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: Фармаконадзор, Регистрация лекарств.",
+              "Отрасль профиля: Фармацевтика.",
+              "Город соответствует запросу: Шымкент."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 18.4616,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "препарат",
+              "регистрац",
+              "фармаконадзор",
+              "шымкент"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-014",
+              "full_name": "Синтетический эксперт 014",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Астана",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 21,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 58.1178,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Фармаконадзор",
+              "Регистрация лекарств"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [
+              "Город: Шымкент"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Фармаконадзор, Регистрация лекарств.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [
+              "Город: Шымкент"
+            ],
+            "score_components": {
+              "bm25": 16.6069,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "препарат",
+              "регистрац",
+              "фармаконадзор"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-009",
+              "full_name": "Синтетический эксперт 009",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Караганда",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 16,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 50.1178,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Фармаконадзор",
+              "Регистрация лекарств"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [
+              "Город: Шымкент"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Фармаконадзор, Регистрация лекарств.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [
+              "Город: Шымкент",
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 16.6069,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "препарат",
+              "регистрац",
+              "фармаконадзор"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 6,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 65.603
+      }
+    },
+    {
+      "id": "industrial-security",
+      "query": "SCADA и защита АСУ ТП в Шымкенте",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-018",
+        "EXP-023",
+        "EXP-028"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 99.407,
+      "response": {
+        "query": "SCADA и защита АСУ ТП в Шымкенте",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "SCADA",
+            "Безопасность АСУ ТП"
+          ],
+          "industries": [
+            "Промышленная автоматизация"
+          ],
+          "cities": [
+            "Шымкент"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-018",
+              "full_name": "Синтетический эксперт 018",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Шымкент",
+              "skills": [
+                "SCADA",
+                "OPC UA",
+                "Безопасность АСУ ТП"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 10,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: внедрение и проверка решений. Компетенции: SCADA, OPC UA, Безопасность АСУ ТП.",
+              "is_synthetic": true
+            },
+            "score": 80.0048,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "SCADA",
+              "Безопасность АСУ ТП"
+            ],
+            "matched_industries": [
+              "Промышленная автоматизация"
+            ],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA, Безопасность АСУ ТП.",
+              "Отрасль профиля: Промышленная автоматизация.",
+              "Город соответствует запросу: Шымкент."
+            ],
+            "warnings": [
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 16.0241,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "scada",
+              "ас",
+              "защит",
+              "тп",
+              "шымкент"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-023",
+              "full_name": "Синтетический эксперт 023",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Караганда",
+              "skills": [
+                "SCADA",
+                "OPC UA",
+                "Безопасность АСУ ТП"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 15,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: внедрение и проверка решений. Компетенции: SCADA, OPC UA, Безопасность АСУ ТП.",
+              "is_synthetic": true
+            },
+            "score": 63.6443,
+            "match_percent": 83.3,
+            "match_status": "partial",
+            "matched_skills": [
+              "SCADA",
+              "Безопасность АСУ ТП"
+            ],
+            "matched_industries": [
+              "Промышленная автоматизация"
+            ],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [
+              "Город: Шымкент"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA, Безопасность АСУ ТП.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [
+              "Город: Шымкент"
+            ],
+            "score_components": {
+              "bm25": 14.3669,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "scada",
+              "ас",
+              "защит",
+              "тп"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-028",
+              "full_name": "Синтетический эксперт 028",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Астана",
+              "skills": [
+                "SCADA",
+                "OPC UA",
+                "Безопасность АСУ ТП"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 20,
+              "availability": "limited",
+              "availability_label": "Ограниченно доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: внедрение и проверка решений. Компетенции: SCADA, OPC UA, Безопасность АСУ ТП.",
+              "is_synthetic": true
+            },
+            "score": 60.6443,
+            "match_percent": 83.3,
+            "match_status": "partial",
+            "matched_skills": [
+              "SCADA",
+              "Безопасность АСУ ТП"
+            ],
+            "matched_industries": [
+              "Промышленная автоматизация"
+            ],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [
+              "Город: Шымкент"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA, Безопасность АСУ ТП.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [
+              "Город: Шымкент",
+              "Доступность: Ограниченно доступен."
+            ],
+            "score_components": {
+              "bm25": 14.3669,
+              "skill_coverage": 1.0,
+              "availability_penalty": 3
+            },
+            "matched_terms": [
+              "scada",
+              "ас",
+              "защит",
+              "тп"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 12,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 82.772
+      }
+    },
+    {
+      "id": "vision",
+      "query": "Python и распознавание дефектов, Атырау",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-047",
+        "EXP-057",
+        "EXP-052"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 56.971,
+      "response": {
+        "query": "Python и распознавание дефектов, Атырау",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "Python",
+            "Компьютерное зрение"
+          ],
+          "industries": [],
+          "cities": [
+            "Атырау"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-047",
+              "full_name": "Синтетический эксперт 047",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Атырау",
+              "skills": [
+                "Python",
+                "Компьютерное зрение",
+                "MLOps"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 9,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: анализ и улучшение процессов. Компетенции: Python, Компьютерное зрение, MLOps.",
+              "is_synthetic": true
+            },
+            "score": 81.1802,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "Python",
+              "Компьютерное зрение"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: Python, Компьютерное зрение.",
+              "Отрасль профиля: IT.",
+              "Город соответствует запросу: Атырау."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 12.5984,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "python",
+              "атыра",
+              "дефект",
+              "распознаван"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-057",
+              "full_name": "Синтетический эксперт 057",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Караганда",
+              "skills": [
+                "Python",
+                "Компьютерное зрение",
+                "MLOps"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 19,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: анализ и улучшение процессов. Компетенции: Python, Компьютерное зрение, MLOps.",
+              "is_synthetic": true
+            },
+            "score": 48.5606,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Python",
+              "Компьютерное зрение"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [
+              "Город: Атырау"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Python, Компьютерное зрение.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Город: Атырау",
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 10.7075,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "python",
+              "дефект",
+              "распознаван"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-052",
+              "full_name": "Синтетический эксперт 052",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Шымкент",
+              "skills": [
+                "Python",
+                "Компьютерное зрение",
+                "MLOps"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 14,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: анализ и улучшение процессов. Компетенции: Python, Компьютерное зрение, MLOps.",
+              "is_synthetic": true
+            },
+            "score": 48.5606,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Python",
+              "Компьютерное зрение"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [
+              "Город: Атырау"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Python, Компьютерное зрение.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Город: Атырау",
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 10.7075,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "python",
+              "дефект",
+              "распознаван"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 21,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 47.382
+      }
+    },
+    {
+      "id": "deployment",
+      "query": "K8s и внедрение моделей в Алматы",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-049",
+        "EXP-059",
+        "EXP-054"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 53.728,
+      "response": {
+        "query": "K8s и внедрение моделей в Алматы",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "MLOps",
+            "Kubernetes"
+          ],
+          "industries": [],
+          "cities": [
+            "Алматы"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-049",
+              "full_name": "Синтетический эксперт 049",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Алматы",
+              "skills": [
+                "DevOps",
+                "Kubernetes",
+                "MLOps"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 11,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: обучение специалистов. Компетенции: DevOps, Kubernetes, MLOps.",
+              "is_synthetic": true
+            },
+            "score": 72.95,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "MLOps",
+              "Kubernetes"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: MLOps, Kubernetes.",
+              "Отрасль профиля: IT.",
+              "Город соответствует запросу: Алматы."
+            ],
+            "warnings": [
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 11.8416,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "k8s",
+              "алмат",
+              "внедрен",
+              "модел"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-059",
+              "full_name": "Синтетический эксперт 059",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Атырау",
+              "skills": [
+                "DevOps",
+                "Kubernetes",
+                "MLOps"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 21,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: обучение специалистов. Компетенции: DevOps, Kubernetes, MLOps.",
+              "is_synthetic": true
+            },
+            "score": 56.2393,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "MLOps",
+              "Kubernetes"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [
+              "Город: Алматы"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: MLOps, Kubernetes.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Город: Алматы"
+            ],
+            "score_components": {
+              "bm25": 9.8872,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "k8s",
+              "внедрен",
+              "модел"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-054",
+              "full_name": "Синтетический эксперт 054",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Павлодар",
+              "skills": [
+                "DevOps",
+                "Kubernetes",
+                "MLOps"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 16,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: обучение специалистов. Компетенции: DevOps, Kubernetes, MLOps.",
+              "is_synthetic": true
+            },
+            "score": 48.2393,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "MLOps",
+              "Kubernetes"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [
+              "Город: Алматы"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: MLOps, Kubernetes.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Город: Алматы",
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 9.8872,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "k8s",
+              "внедрен",
+              "модел"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 6,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 41.646
+      }
+    },
+    {
+      "id": "stem",
+      "query": "Инженерное образование и робототехника, Алматы",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-077",
+        "EXP-087",
+        "EXP-082"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 29.632,
+      "response": {
+        "query": "Инженерное образование и робототехника, Алматы",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "Робототехника",
+            "STEM"
+          ],
+          "industries": [
+            "Инженерия",
+            "Образование"
+          ],
+          "cities": [
+            "Алматы"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-077",
+              "full_name": "Синтетический эксперт 077",
+              "title": "Методист цифрового обучения",
+              "industry": "Образование",
+              "city": "Алматы",
+              "skills": [
+                "STEM",
+                "Робототехника",
+                "Instructional Design"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 9,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: Образование. Задачи: анализ и улучшение процессов. Компетенции: STEM, Робототехника, Instructional Design.",
+              "is_synthetic": true
+            },
+            "score": 79.2948,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "Робототехника",
+              "STEM"
+            ],
+            "matched_industries": [
+              "Образование"
+            ],
+            "profile_industry": "Образование",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: Робототехника, STEM.",
+              "Отрасль профиля: Образование.",
+              "Город соответствует запросу: Алматы."
+            ],
+            "warnings": [
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 13.0023,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "алмат",
+              "инженерн",
+              "образован",
+              "робототехник"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-087",
+              "full_name": "Синтетический эксперт 087",
+              "title": "Методист цифрового обучения",
+              "industry": "Образование",
+              "city": "Атырау",
+              "skills": [
+                "STEM",
+                "Робототехника",
+                "Instructional Design"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 19,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Образование. Задачи: анализ и улучшение процессов. Компетенции: STEM, Робототехника, Instructional Design.",
+              "is_synthetic": true
+            },
+            "score": 62.7074,
+            "match_percent": 83.3,
+            "match_status": "partial",
+            "matched_skills": [
+              "Робототехника",
+              "STEM"
+            ],
+            "matched_industries": [
+              "Образование"
+            ],
+            "profile_industry": "Образование",
+            "missing_requirements": [
+              "Город: Алматы"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Робототехника, STEM.",
+              "Отрасль профиля: Образование."
+            ],
+            "warnings": [
+              "Город: Алматы"
+            ],
+            "score_components": {
+              "bm25": 11.1155,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "инженерн",
+              "образован",
+              "робототехник"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-082",
+              "full_name": "Синтетический эксперт 082",
+              "title": "Методист цифрового обучения",
+              "industry": "Образование",
+              "city": "Павлодар",
+              "skills": [
+                "STEM",
+                "Робототехника",
+                "Instructional Design"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 14,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: Образование. Задачи: анализ и улучшение процессов. Компетенции: STEM, Робототехника, Instructional Design.",
+              "is_synthetic": true
+            },
+            "score": 54.7074,
+            "match_percent": 83.3,
+            "match_status": "partial",
+            "matched_skills": [
+              "Робототехника",
+              "STEM"
+            ],
+            "matched_industries": [
+              "Образование"
+            ],
+            "profile_industry": "Образование",
+            "missing_requirements": [
+              "Город: Алматы"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Робототехника, STEM.",
+              "Отрасль профиля: Образование."
+            ],
+            "warnings": [
+              "Город: Алматы",
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 11.1155,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "инженерн",
+              "образован",
+              "робототехник"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 15,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 22.25
+      }
+    },
+    {
+      "id": "food-safety",
+      "query": "HACCP и производственный аудит в Астане",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-112",
+        "EXP-092",
+        "EXP-102"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 23.016,
+      "response": {
+        "query": "HACCP и производственный аудит в Астане",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "Аудит производства",
+            "HACCP"
+          ],
+          "industries": [],
+          "cities": [
+            "Астана"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-112",
+              "full_name": "Синтетический эксперт 112",
+              "title": "Аудитор систем качества",
+              "industry": "Качество и сертификация",
+              "city": "Астана",
+              "skills": [
+                "HACCP",
+                "ISO 9001",
+                "Аудит производства"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 14,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Качество и сертификация. Задачи: анализ и улучшение процессов. Компетенции: HACCP, ISO 9001, Аудит производства.",
+              "is_synthetic": true
+            },
+            "score": 80.7792,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "Аудит производства",
+              "HACCP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Качество и сертификация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: Аудит производства, HACCP.",
+              "Отрасль профиля: Качество и сертификация.",
+              "Город соответствует запросу: Астана."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 11.3232,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "haccp",
+              "ауд",
+              "производствен"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-092",
+              "full_name": "Синтетический эксперт 092",
+              "title": "Консультант производственных процессов",
+              "industry": "Производство",
+              "city": "Астана",
+              "skills": [
+                "HACCP",
+                "ISO 9001",
+                "Аудит производства"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 9,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: Производство. Задачи: анализ и улучшение процессов. Компетенции: HACCP, ISO 9001, Аудит производства.",
+              "is_synthetic": true
+            },
+            "score": 73.0791,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "Аудит производства",
+              "HACCP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Производство",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: Аудит производства, HACCP.",
+              "Отрасль профиля: Производство.",
+              "Город соответствует запросу: Астана."
+            ],
+            "warnings": [
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 12.2571,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "haccp",
+              "ауд",
+              "производствен"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-102",
+              "full_name": "Синтетический эксперт 102",
+              "title": "Консультант производственных процессов",
+              "industry": "Производство",
+              "city": "Павлодар",
+              "skills": [
+                "HACCP",
+                "ISO 9001",
+                "Аудит производства"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 19,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Производство. Задачи: анализ и улучшение процессов. Компетенции: HACCP, ISO 9001, Аудит производства.",
+              "is_synthetic": true
+            },
+            "score": 57.0791,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Аудит производства",
+              "HACCP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Производство",
+            "missing_requirements": [
+              "Город: Астана"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Аудит производства, HACCP.",
+              "Отрасль профиля: Производство."
+            ],
+            "warnings": [
+              "Город: Астана"
+            ],
+            "score_components": {
+              "bm25": 12.2571,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "haccp",
+              "ауд",
+              "производствен"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 12,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 18.552
+      }
+    },
+    {
+      "id": "certification",
+      "query": "ISO 27001 и EAC, Атырау",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-109",
+        "EXP-119",
+        "EXP-061"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 35.284,
+      "response": {
+        "query": "ISO 27001 и EAC, Атырау",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "ISO 27001",
+            "Сертификация ЕАЭС"
+          ],
+          "industries": [],
+          "cities": [
+            "Атырау"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-109",
+              "full_name": "Синтетический эксперт 109",
+              "title": "Аудитор систем качества",
+              "industry": "Качество и сертификация",
+              "city": "Атырау",
+              "skills": [
+                "ISO 27001",
+                "ISO 9001",
+                "Сертификация ЕАЭС"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 11,
+              "availability": "limited",
+              "availability_label": "Ограниченно доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Качество и сертификация. Задачи: обучение специалистов. Компетенции: ISO 27001, ISO 9001, Сертификация ЕАЭС.",
+              "is_synthetic": true
+            },
+            "score": 77.9847,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "ISO 27001",
+              "Сертификация ЕАЭС"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Качество и сертификация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: ISO 27001, Сертификация ЕАЭС.",
+              "Отрасль профиля: Качество и сертификация.",
+              "Город соответствует запросу: Атырау."
+            ],
+            "warnings": [
+              "Доступность: Ограниченно доступен."
+            ],
+            "score_components": {
+              "bm25": 11.9511,
+              "skill_coverage": 1.0,
+              "availability_penalty": 3
+            },
+            "matched_terms": [
+              "27001",
+              "eac",
+              "iso",
+              "атыра"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-119",
+              "full_name": "Синтетический эксперт 119",
+              "title": "Аудитор систем качества",
+              "industry": "Качество и сертификация",
+              "city": "Караганда",
+              "skills": [
+                "ISO 27001",
+                "ISO 9001",
+                "Сертификация ЕАЭС"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 21,
+              "availability": "limited",
+              "availability_label": "Ограниченно доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Качество и сертификация. Задачи: обучение специалистов. Компетенции: ISO 27001, ISO 9001, Сертификация ЕАЭС.",
+              "is_synthetic": true
+            },
+            "score": 53.3899,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "ISO 27001",
+              "Сертификация ЕАЭС"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Качество и сертификация",
+            "missing_requirements": [
+              "Город: Атырау"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: ISO 27001, Сертификация ЕАЭС.",
+              "Отрасль профиля: Качество и сертификация."
+            ],
+            "warnings": [
+              "Город: Атырау",
+              "Доступность: Ограниченно доступен."
+            ],
+            "score_components": {
+              "bm25": 10.26,
+              "skill_coverage": 1.0,
+              "availability_penalty": 3
+            },
+            "matched_terms": [
+              "27001",
+              "eac",
+              "iso"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-061",
+              "full_name": "Синтетический эксперт 061",
+              "title": "Эксперт по защите информационных систем",
+              "industry": "Кибербезопасность",
+              "city": "Атырау",
+              "skills": [
+                "Пентест",
+                "Безопасность сетей",
+                "ISO 27001"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 8,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Кибербезопасность. Задачи: консультирование проектных команд. Компетенции: Пентест, Безопасность сетей, ISO 27001.",
+              "is_synthetic": true
+            },
+            "score": 50.0267,
+            "match_percent": 60.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "ISO 27001"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Кибербезопасность",
+            "missing_requirements": [
+              "Сертификация ЕАЭС"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: ISO 27001.",
+              "Отрасль профиля: Кибербезопасность.",
+              "Город соответствует запросу: Атырау."
+            ],
+            "warnings": [
+              "Сертификация ЕАЭС"
+            ],
+            "score_components": {
+              "bm25": 9.3929,
+              "skill_coverage": 0.5,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "27001",
+              "iso",
+              "атыра"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 15,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 20.517
+      }
+    },
+    {
+      "id": "senior-nlp",
+      "query": "NLP и Python, минимум 18 лет",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-056",
+        "EXP-051",
+        "EXP-046"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 47.468,
+      "response": {
+        "query": "NLP и Python, минимум 18 лет",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "Python",
+            "NLP"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": 18,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-056",
+              "full_name": "Синтетический эксперт 056",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Астана",
+              "skills": [
+                "Python",
+                "Машинное обучение",
+                "NLP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 18,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: консультирование проектных команд. Компетенции: Python, Машинное обучение, NLP.",
+              "is_synthetic": true
+            },
+            "score": 77.3822,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "Python",
+              "NLP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: Python, NLP.",
+              "Отрасль профиля: IT.",
+              "Опыт 18 лет соответствует указанному минимуму."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 10.2403,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "nlp",
+              "python"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-051",
+              "full_name": "Синтетический эксперт 051",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Караганда",
+              "skills": [
+                "Python",
+                "Машинное обучение",
+                "NLP"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 13,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: консультирование проектных команд. Компетенции: Python, Машинное обучение, NLP.",
+              "is_synthetic": true
+            },
+            "score": 64.3822,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Python",
+              "NLP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [
+              "Опыт от 18 лет"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Python, NLP.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Опыт от 18 лет"
+            ],
+            "score_components": {
+              "bm25": 10.2403,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "nlp",
+              "python"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-046",
+              "full_name": "Синтетический эксперт 046",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Шымкент",
+              "skills": [
+                "Python",
+                "Машинное обучение",
+                "NLP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 8,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: консультирование проектных команд. Компетенции: Python, Машинное обучение, NLP.",
+              "is_synthetic": true
+            },
+            "score": 64.3822,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Python",
+              "NLP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [
+              "Опыт от 18 лет"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Python, NLP.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Опыт от 18 лет"
+            ],
+            "score_components": {
+              "bm25": 10.2403,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "nlp",
+              "python"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 21,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 21.632
+      }
+    },
+    {
+      "id": "senior-pharma",
+      "query": "GMP в фармацевтике от 18 лет",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-014",
+        "EXP-012",
+        "EXP-011"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 41.181,
+      "response": {
+        "query": "GMP в фармацевтике от 18 лет",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "GMP"
+          ],
+          "industries": [
+            "Фармацевтика"
+          ],
+          "cities": [],
+          "min_years_experience": 18,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-014",
+              "full_name": "Синтетический эксперт 014",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Астана",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 21,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 81.7576,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [
+              "Фармацевтика"
+            ],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика.",
+              "Опыт 21 лет соответствует указанному минимуму."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 7.046,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp",
+              "фармацевтик"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-012",
+              "full_name": "Синтетический эксперт 012",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Павлодар",
+              "skills": [
+                "GMP",
+                "Валидация процессов",
+                "Аудит производства"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 19,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: анализ и улучшение процессов. Компетенции: GMP, Валидация процессов, Аудит производства.",
+              "is_synthetic": true
+            },
+            "score": 81.5391,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [
+              "Фармацевтика"
+            ],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика.",
+              "Опыт 19 лет соответствует указанному минимуму."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 6.7225,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp",
+              "фармацевтик"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-011",
+              "full_name": "Синтетический эксперт 011",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Атырау",
+              "skills": [
+                "GMP",
+                "GCP",
+                "Клинические исследования",
+                "Аудит производства"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 18,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: консультирование проектных команд. Компетенции: GMP, GCP, Клинические исследования, Аудит производства.",
+              "is_synthetic": true
+            },
+            "score": 81.2925,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [
+              "Фармацевтика"
+            ],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика.",
+              "Опыт 18 лет соответствует указанному минимуму."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 6.3795,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp",
+              "фармацевтик"
+            ]
+          }
+        ],
+        "warnings": [],
+        "candidate_count": 15,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 17.198
+      }
+    },
+    {
+      "id": "alternative",
+      "query": "Нужен SCADA или PLC",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-026",
+        "EXP-021",
+        "EXP-016"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 43.612,
+      "response": {
+        "query": "Нужен SCADA или PLC",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "PLC",
+            "SCADA"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-026",
+              "full_name": "Синтетический эксперт 026",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Павлодар",
+              "skills": [
+                "PLC",
+                "SCADA",
+                "OPC UA"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 18,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: консультирование проектных команд. Компетенции: PLC, SCADA, OPC UA.",
+              "is_synthetic": true
+            },
+            "score": 74.5172,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "PLC",
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: PLC, SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 10.591,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "plc",
+              "scada"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-021",
+              "full_name": "Синтетический эксперт 021",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Алматы",
+              "skills": [
+                "PLC",
+                "SCADA",
+                "OPC UA"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 13,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: консультирование проектных команд. Компетенции: PLC, SCADA, OPC UA.",
+              "is_synthetic": true
+            },
+            "score": 74.5172,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "PLC",
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: PLC, SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 10.591,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "plc",
+              "scada"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-016",
+              "full_name": "Синтетический эксперт 016",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Астана",
+              "skills": [
+                "PLC",
+                "SCADA",
+                "OPC UA"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 8,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: консультирование проектных команд. Компетенции: PLC, SCADA, OPC UA.",
+              "is_synthetic": true
+            },
+            "score": 74.5172,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "PLC",
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: PLC, SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 10.591,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "plc",
+              "scada"
+            ]
+          }
+        ],
+        "warnings": [],
+        "candidate_count": 12,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 29.124
+      }
+    },
+    {
+      "id": "strict-city",
+      "query": "Только Алматы, нужен ISO 9001",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-091",
+        "EXP-111",
+        "EXP-035"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 28.573,
+      "response": {
+        "query": "Только Алматы, нужен ISO 9001",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "ISO 9001"
+          ],
+          "industries": [],
+          "cities": [
+            "Алматы"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [
+            "только"
+          ],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-091",
+              "full_name": "Синтетический эксперт 091",
+              "title": "Консультант производственных процессов",
+              "industry": "Производство",
+              "city": "Алматы",
+              "skills": [
+                "Lean",
+                "Six Sigma",
+                "ISO 9001"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 8,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Производство. Задачи: консультирование проектных команд. Компетенции: Lean, Six Sigma, ISO 9001.",
+              "is_synthetic": true
+            },
+            "score": 79.0643,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "ISO 9001"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Производство",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: ISO 9001.",
+              "Отрасль профиля: Производство.",
+              "Город соответствует запросу: Алматы."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 7.5345,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "9001",
+              "iso",
+              "алмат"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-111",
+              "full_name": "Синтетический эксперт 111",
+              "title": "Аудитор систем качества",
+              "industry": "Качество и сертификация",
+              "city": "Алматы",
+              "skills": [
+                "ISO 9001",
+                "Сертификация ЕАЭС",
+                "Метрология"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 13,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Качество и сертификация. Задачи: консультирование проектных команд. Компетенции: ISO 9001, Сертификация ЕАЭС, Метрология.",
+              "is_synthetic": true
+            },
+            "score": 79.0096,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "ISO 9001"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Качество и сертификация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: ISO 9001.",
+              "Отрасль профиля: Качество и сертификация.",
+              "Город соответствует запросу: Алматы."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 7.4443,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "9001",
+              "iso",
+              "алмат"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-035",
+              "full_name": "Синтетический эксперт 035",
+              "title": "Инженер-конструктор",
+              "industry": "Инженерия",
+              "city": "Алматы",
+              "skills": [
+                "BIM",
+                "Энергоэффективность",
+                "ISO 9001"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 12,
+              "availability": "limited",
+              "availability_label": "Ограниченно доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Инженерия. Задачи: экспертная оценка проектов. Компетенции: BIM, Энергоэффективность, ISO 9001.",
+              "is_synthetic": true
+            },
+            "score": 76.1952,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "ISO 9001"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Инженерия",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: ISO 9001.",
+              "Отрасль профиля: Инженерия.",
+              "Город соответствует запросу: Алматы."
+            ],
+            "warnings": [
+              "Доступность: Ограниченно доступен."
+            ],
+            "score_components": {
+              "bm25": 7.7564,
+              "skill_coverage": 1.0,
+              "availability_penalty": 3
+            },
+            "matched_terms": [
+              "9001",
+              "iso",
+              "алмат"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть слов обработана только лексически. Процент покрывает распознанные требования, а не весь смысл запроса."
+        ],
+        "candidate_count": 24,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 22.913
+      }
+    },
+    {
+      "id": "excluded-city",
+      "query": "GMP, но не из Алматы",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-014",
+        "EXP-004",
+        "EXP-010"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 42.084,
+      "response": {
+        "query": "GMP, но не из Алматы",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "GMP"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [
+            "Алматы"
+          ],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-014",
+              "full_name": "Синтетический эксперт 014",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Астана",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 21,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 70.0223,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 4.0179,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-004",
+              "full_name": "Синтетический эксперт 004",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Шымкент",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 11,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 70.0223,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 4.0179,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-010",
+              "full_name": "Синтетический эксперт 010",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Шымкент",
+              "skills": [
+                "GMP",
+                "Валидация процессов",
+                "ISO 9001"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 17,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: экспертная оценка проектов. Компетенции: GMP, Валидация процессов, ISO 9001.",
+              "is_synthetic": true
+            },
+            "score": 69.8656,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 3.8939,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp"
+            ]
+          }
+        ],
+        "warnings": [],
+        "candidate_count": 13,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 22.1
+      }
+    },
+    {
+      "id": "max-experience",
+      "query": "GMP, опыт не более 10 лет",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-002",
+        "EXP-001",
+        "EXP-014"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 29.116,
+      "response": {
+        "query": "GMP, опыт не более 10 лет",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "GMP"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": 10,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-002",
+              "full_name": "Синтетический эксперт 002",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Астана",
+              "skills": [
+                "GMP",
+                "Валидация процессов",
+                "Аудит производства"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 9,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: анализ и улучшение процессов. Компетенции: GMP, Валидация процессов, Аудит производства.",
+              "is_synthetic": true
+            },
+            "score": 72.8502,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика.",
+              "Опыт 9 лет не превышает указанный максимум 10."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 3.8819,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-001",
+              "full_name": "Синтетический эксперт 001",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Алматы",
+              "skills": [
+                "GMP",
+                "GCP",
+                "Клинические исследования",
+                "Аудит производства"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 8,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: консультирование проектных команд. Компетенции: GMP, GCP, Клинические исследования, Аудит производства.",
+              "is_synthetic": true
+            },
+            "score": 72.6542,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика.",
+              "Опыт 8 лет не превышает указанный максимум 10."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 3.7326,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-014",
+              "full_name": "Синтетический эксперт 014",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Астана",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 21,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 60.0223,
+            "match_percent": 66.7,
+            "match_status": "partial",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [
+              "Опыт не более 10 лет"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [
+              "Опыт не более 10 лет"
+            ],
+            "score_components": {
+              "bm25": 4.0179,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 15,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 25.267
+      }
+    },
+    {
+      "id": "exclusion-tail",
+      "query": "SCADA без PLC",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-023",
+        "EXP-028",
+        "EXP-018"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 49.57,
+      "response": {
+        "query": "SCADA без PLC",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "SCADA"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": null,
+          "excluded_skills": [
+            "PLC"
+          ],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-023",
+              "full_name": "Синтетический эксперт 023",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Караганда",
+              "skills": [
+                "SCADA",
+                "OPC UA",
+                "Безопасность АСУ ТП"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 15,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: внедрение и проверка решений. Компетенции: SCADA, OPC UA, Безопасность АСУ ТП.",
+              "is_synthetic": true
+            },
+            "score": 71.555,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 5.473,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "scada"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-028",
+              "full_name": "Синтетический эксперт 028",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Астана",
+              "skills": [
+                "SCADA",
+                "OPC UA",
+                "Безопасность АСУ ТП"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 20,
+              "availability": "limited",
+              "availability_label": "Ограниченно доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: внедрение и проверка решений. Компетенции: SCADA, OPC UA, Безопасность АСУ ТП.",
+              "is_synthetic": true
+            },
+            "score": 68.555,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [
+              "Доступность: Ограниченно доступен."
+            ],
+            "score_components": {
+              "bm25": 5.473,
+              "skill_coverage": 1.0,
+              "availability_penalty": 3
+            },
+            "matched_terms": [
+              "scada"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-018",
+              "full_name": "Синтетический эксперт 018",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Шымкент",
+              "skills": [
+                "SCADA",
+                "OPC UA",
+                "Безопасность АСУ ТП"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 10,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: внедрение и проверка решений. Компетенции: SCADA, OPC UA, Безопасность АСУ ТП.",
+              "is_synthetic": true
+            },
+            "score": 63.555,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 5.473,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "scada"
+            ]
+          }
+        ],
+        "warnings": [],
+        "candidate_count": 3,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 21.848
+      }
+    },
+    {
+      "id": "exclusion-front",
+      "query": "Без PLC нужен специалист по SCADA",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-023",
+        "EXP-028",
+        "EXP-018"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 20.651,
+      "response": {
+        "query": "Без PLC нужен специалист по SCADA",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "SCADA"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": null,
+          "excluded_skills": [
+            "PLC"
+          ],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-023",
+              "full_name": "Синтетический эксперт 023",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Караганда",
+              "skills": [
+                "SCADA",
+                "OPC UA",
+                "Безопасность АСУ ТП"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 15,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: внедрение и проверка решений. Компетенции: SCADA, OPC UA, Безопасность АСУ ТП.",
+              "is_synthetic": true
+            },
+            "score": 71.555,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 5.473,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "scada"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-028",
+              "full_name": "Синтетический эксперт 028",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Астана",
+              "skills": [
+                "SCADA",
+                "OPC UA",
+                "Безопасность АСУ ТП"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 20,
+              "availability": "limited",
+              "availability_label": "Ограниченно доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: внедрение и проверка решений. Компетенции: SCADA, OPC UA, Безопасность АСУ ТП.",
+              "is_synthetic": true
+            },
+            "score": 68.555,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [
+              "Доступность: Ограниченно доступен."
+            ],
+            "score_components": {
+              "bm25": 5.473,
+              "skill_coverage": 1.0,
+              "availability_penalty": 3
+            },
+            "matched_terms": [
+              "scada"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-018",
+              "full_name": "Синтетический эксперт 018",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Шымкент",
+              "skills": [
+                "SCADA",
+                "OPC UA",
+                "Безопасность АСУ ТП"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 10,
+              "availability": "busy",
+              "availability_label": "Занят",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: внедрение и проверка решений. Компетенции: SCADA, OPC UA, Безопасность АСУ ТП.",
+              "is_synthetic": true
+            },
+            "score": 63.555,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [
+              "Доступность: Занят."
+            ],
+            "score_components": {
+              "bm25": 5.473,
+              "skill_coverage": 1.0,
+              "availability_penalty": 8
+            },
+            "matched_terms": [
+              "scada"
+            ]
+          }
+        ],
+        "warnings": [],
+        "candidate_count": 3,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 17.081
+      }
+    },
+    {
+      "id": "industry-exclusion",
+      "query": "Фармацевтика от 5 лет без Python",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-014",
+        "EXP-004",
+        "EXP-013"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 23.447,
+      "response": {
+        "query": "Фармацевтика от 5 лет без Python",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [],
+          "industries": [
+            "Фармацевтика"
+          ],
+          "cities": [],
+          "min_years_experience": 5,
+          "excluded_skills": [
+            "Python"
+          ],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-014",
+              "full_name": "Синтетический эксперт 014",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Астана",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 21,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 17.6172,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [],
+            "matched_industries": [
+              "Фармацевтика"
+            ],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "Отрасль профиля: Фармацевтика.",
+              "Опыт 21 лет соответствует указанному минимуму.",
+              "Найдено лексическое совпадение с текстом профиля; требуется проверка компетенций."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 3.0281,
+              "skill_coverage": 0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "фармацевтик"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-004",
+              "full_name": "Синтетический эксперт 004",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Шымкент",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 11,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 17.6172,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [],
+            "matched_industries": [
+              "Фармацевтика"
+            ],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "Отрасль профиля: Фармацевтика.",
+              "Опыт 11 лет соответствует указанному минимуму.",
+              "Найдено лексическое совпадение с текстом профиля; требуется проверка компетенций."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 3.0281,
+              "skill_coverage": 0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "фармацевтик"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-013",
+              "full_name": "Синтетический эксперт 013",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Алматы",
+              "skills": [
+                "GCP",
+                "Клинические исследования",
+                "Фармаконадзор"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 20,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: внедрение и проверка решений. Компетенции: GCP, Клинические исследования, Фармаконадзор.",
+              "is_synthetic": true
+            },
+            "score": 17.5878,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [],
+            "matched_industries": [
+              "Фармацевтика"
+            ],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [],
+            "explanation": [
+              "Отрасль профиля: Фармацевтика.",
+              "Опыт 20 лет соответствует указанному минимуму.",
+              "Найдено лексическое совпадение с текстом профиля; требуется проверка компетенций."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 3.0101,
+              "skill_coverage": 0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "фармацевтик"
+            ]
+          }
+        ],
+        "warnings": [
+          "Компетенции из словаря не распознаны: используется лексический поиск по профилям."
+        ],
+        "candidate_count": 15,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 19.502
+      }
+    },
+    {
+      "id": "learning",
+      "query": "СДО и дизайн обучения в Атырау",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-081",
+        "EXP-089",
+        "EXP-086"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 43.211,
+      "response": {
+        "query": "СДО и дизайн обучения в Атырау",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "Instructional Design",
+            "LMS"
+          ],
+          "industries": [],
+          "cities": [
+            "Атырау"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-081",
+              "full_name": "Синтетический эксперт 081",
+              "title": "Методист цифрового обучения",
+              "industry": "Образование",
+              "city": "Атырау",
+              "skills": [
+                "LMS",
+                "Instructional Design",
+                "Learning Analytics"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 13,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Образование. Задачи: консультирование проектных команд. Компетенции: LMS, Instructional Design, Learning Analytics.",
+              "is_synthetic": true
+            },
+            "score": 80.3404,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "Instructional Design",
+              "LMS"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Образование",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: Instructional Design, LMS.",
+              "Отрасль профиля: Образование.",
+              "Город соответствует запросу: Атырау."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 10.1352,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "атыра",
+              "дизайн",
+              "обучен",
+              "сдо"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-089",
+              "full_name": "Синтетический эксперт 089",
+              "title": "Методист цифрового обучения",
+              "industry": "Образование",
+              "city": "Алматы",
+              "skills": [
+                "LMS",
+                "Instructional Design",
+                "Охрана труда"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 21,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Образование. Задачи: обучение специалистов. Компетенции: LMS, Instructional Design, Охрана труда.",
+              "is_synthetic": true
+            },
+            "score": 55.5642,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Instructional Design",
+              "LMS"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Образование",
+            "missing_requirements": [
+              "Город: Атырау"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Instructional Design, LMS.",
+              "Отрасль профиля: Образование."
+            ],
+            "warnings": [
+              "Город: Атырау"
+            ],
+            "score_components": {
+              "bm25": 8.4305,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "дизайн",
+              "обучен",
+              "сдо"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-086",
+              "full_name": "Синтетический эксперт 086",
+              "title": "Методист цифрового обучения",
+              "industry": "Образование",
+              "city": "Шымкент",
+              "skills": [
+                "LMS",
+                "Instructional Design",
+                "Learning Analytics"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 18,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Образование. Задачи: консультирование проектных команд. Компетенции: LMS, Instructional Design, Learning Analytics.",
+              "is_synthetic": true
+            },
+            "score": 55.5147,
+            "match_percent": 80.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Instructional Design",
+              "LMS"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Образование",
+            "missing_requirements": [
+              "Город: Атырау"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Instructional Design, LMS.",
+              "Отрасль профиля: Образование."
+            ],
+            "warnings": [
+              "Город: Атырау"
+            ],
+            "score_components": {
+              "bm25": 8.3355,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "дизайн",
+              "обучен",
+              "сдо"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть кандидатов соответствует запросу не полностью; проверьте missing_requirements."
+        ],
+        "candidate_count": 12,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 18.519
+      }
+    },
+    {
+      "id": "frontend",
+      "query": "Нужен разработчик интерфейсов на React",
+      "negative": false,
+      "http_status": 200,
+      "hit_at_3": true,
+      "passed": true,
+      "top3": [
+        "EXP-060",
+        "EXP-050",
+        "EXP-055"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 29.535,
+      "response": {
+        "query": "Нужен разработчик интерфейсов на React",
+        "status": "ok",
+        "parsed_query": {
+          "skills": [
+            "React"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [
+            "разработчик",
+            "интерфейсов"
+          ],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-060",
+              "full_name": "Синтетический эксперт 060",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Павлодар",
+              "skills": [
+                "React",
+                "SQL",
+                "Python"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 22,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: экспертная оценка проектов. Компетенции: React, SQL, Python.",
+              "is_synthetic": true
+            },
+            "score": 72.7384,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "React"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: React.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 7.0168,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "react"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-050",
+              "full_name": "Синтетический эксперт 050",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Астана",
+              "skills": [
+                "React",
+                "SQL",
+                "Python"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 12,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: экспертная оценка проектов. Компетенции: React, SQL, Python.",
+              "is_synthetic": true
+            },
+            "score": 72.7384,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "React"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: React.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [],
+            "score_components": {
+              "bm25": 7.0168,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "react"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-055",
+              "full_name": "Синтетический эксперт 055",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Алматы",
+              "skills": [
+                "React",
+                "SQL",
+                "Python"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 17,
+              "availability": "limited",
+              "availability_label": "Ограниченно доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: экспертная оценка проектов. Компетенции: React, SQL, Python.",
+              "is_synthetic": true
+            },
+            "score": 69.7384,
+            "match_percent": 100.0,
+            "match_status": "full",
+            "matched_skills": [
+              "React"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [],
+            "explanation": [
+              "В профиле указаны компетенции: React.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Доступность: Ограниченно доступен."
+            ],
+            "score_components": {
+              "bm25": 7.0168,
+              "skill_coverage": 1.0,
+              "availability_penalty": 3
+            },
+            "matched_terms": [
+              "react"
+            ]
+          }
+        ],
+        "warnings": [
+          "Часть слов обработана только лексически. Процент покрывает распознанные требования, а не весь смысл запроса."
+        ],
+        "candidate_count": 3,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 17.684
+      }
+    },
+    {
+      "id": "unknown-city",
+      "query": "GMP в Ташкенте",
+      "negative": true,
+      "http_status": 200,
+      "hit_at_3": null,
+      "passed": true,
+      "top3": [
+        "EXP-014",
+        "EXP-004",
+        "EXP-010"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 23.381,
+      "response": {
+        "query": "GMP в Ташкенте",
+        "status": "partial",
+        "parsed_query": {
+          "skills": [
+            "GMP"
+          ],
+          "industries": [],
+          "cities": [
+            "Ташкенте"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-014",
+              "full_name": "Синтетический эксперт 014",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Астана",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 21,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 52.0223,
+            "match_percent": 66.7,
+            "match_status": "partial",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [
+              "Город: Ташкенте"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [
+              "Город: Ташкенте"
+            ],
+            "score_components": {
+              "bm25": 4.0179,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-004",
+              "full_name": "Синтетический эксперт 004",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Шымкент",
+              "skills": [
+                "Регистрация лекарств",
+                "Фармаконадзор",
+                "GMP"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 11,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: обучение специалистов. Компетенции: Регистрация лекарств, Фармаконадзор, GMP.",
+              "is_synthetic": true
+            },
+            "score": 52.0223,
+            "match_percent": 66.7,
+            "match_status": "partial",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [
+              "Город: Ташкенте"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [
+              "Город: Ташкенте"
+            ],
+            "score_components": {
+              "bm25": 4.0179,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-010",
+              "full_name": "Синтетический эксперт 010",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Шымкент",
+              "skills": [
+                "GMP",
+                "Валидация процессов",
+                "ISO 9001"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 17,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: экспертная оценка проектов. Компетенции: GMP, Валидация процессов, ISO 9001.",
+              "is_synthetic": true
+            },
+            "score": 51.8656,
+            "match_percent": 66.7,
+            "match_status": "partial",
+            "matched_skills": [
+              "GMP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [
+              "Город: Ташкенте"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: GMP.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [
+              "Город: Ташкенте"
+            ],
+            "score_components": {
+              "bm25": 3.8939,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gmp"
+            ]
+          }
+        ],
+        "warnings": [
+          "Полного соответствия распознанным требованиям нет. Показаны частичные совпадения."
+        ],
+        "candidate_count": 15,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 19.228
+      }
+    },
+    {
+      "id": "unknown-specialty",
+      "query": "Нужен специалист по квантовой криптографии в Астане",
+      "negative": true,
+      "http_status": 200,
+      "hit_at_3": null,
+      "passed": true,
+      "top3": [],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 24.458,
+      "response": {
+        "query": "Нужен специалист по квантовой криптографии в Астане",
+        "status": "no_matches",
+        "parsed_query": {
+          "skills": [],
+          "industries": [],
+          "cities": [
+            "Астана"
+          ],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [
+            "квантовой",
+            "криптографии"
+          ],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [],
+        "warnings": [
+          "Релевантные эксперты не найдены. Уточните компетенции или снимите отраслевой фильтр.",
+          "Часть слов обработана только лексически. Процент покрывает распознанные требования, а не весь смысл запроса.",
+          "Компетенции из словаря не распознаны: используется лексический поиск по профилям."
+        ],
+        "candidate_count": 0,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 20.569
+      }
+    },
+    {
+      "id": "impossible-skills",
+      "query": "Обязательно одновременно GMP, SCADA и BIM",
+      "negative": true,
+      "http_status": 200,
+      "hit_at_3": null,
+      "passed": true,
+      "top3": [
+        "EXP-040",
+        "EXP-026",
+        "EXP-021"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 49.95,
+      "response": {
+        "query": "Обязательно одновременно GMP, SCADA и BIM",
+        "status": "partial",
+        "parsed_query": {
+          "skills": [
+            "GMP",
+            "SCADA",
+            "BIM"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [
+            "обязательно",
+            "одновременно"
+          ],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-040",
+              "full_name": "Синтетический эксперт 040",
+              "title": "Инженер-конструктор",
+              "industry": "Инженерия",
+              "city": "Павлодар",
+              "skills": [
+                "BIM",
+                "Энергоэффективность",
+                "ISO 9001"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 17,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Инженерия. Задачи: экспертная оценка проектов. Компетенции: BIM, Энергоэффективность, ISO 9001.",
+              "is_synthetic": true
+            },
+            "score": 31.7517,
+            "match_percent": 33.3,
+            "match_status": "partial",
+            "matched_skills": [
+              "BIM"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Инженерия",
+            "missing_requirements": [
+              "GMP",
+              "SCADA"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: BIM.",
+              "Отрасль профиля: Инженерия."
+            ],
+            "warnings": [
+              "GMP",
+              "SCADA"
+            ],
+            "score_components": {
+              "bm25": 5.6989,
+              "skill_coverage": 0.3333,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "bim"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-026",
+              "full_name": "Синтетический эксперт 026",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Павлодар",
+              "skills": [
+                "PLC",
+                "SCADA",
+                "OPC UA"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 18,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: консультирование проектных команд. Компетенции: PLC, SCADA, OPC UA.",
+              "is_synthetic": true
+            },
+            "score": 31.721,
+            "match_percent": 33.3,
+            "match_status": "partial",
+            "matched_skills": [
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [
+              "GMP",
+              "BIM"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [
+              "GMP",
+              "BIM"
+            ],
+            "score_components": {
+              "bm25": 5.663,
+              "skill_coverage": 0.3333,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "scada"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-021",
+              "full_name": "Синтетический эксперт 021",
+              "title": "Инженер АСУ ТП",
+              "industry": "Промышленная автоматизация",
+              "city": "Алматы",
+              "skills": [
+                "PLC",
+                "SCADA",
+                "OPC UA"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 13,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Промышленная автоматизация. Задачи: консультирование проектных команд. Компетенции: PLC, SCADA, OPC UA.",
+              "is_synthetic": true
+            },
+            "score": 31.721,
+            "match_percent": 33.3,
+            "match_status": "partial",
+            "matched_skills": [
+              "SCADA"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Промышленная автоматизация",
+            "missing_requirements": [
+              "GMP",
+              "BIM"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: SCADA.",
+              "Отрасль профиля: Промышленная автоматизация."
+            ],
+            "warnings": [
+              "GMP",
+              "BIM"
+            ],
+            "score_components": {
+              "bm25": 5.663,
+              "skill_coverage": 0.3333,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "scada"
+            ]
+          }
+        ],
+        "warnings": [
+          "Полного соответствия распознанным требованиям нет. Показаны частичные совпадения.",
+          "Часть слов обработана только лексически. Процент покрывает распознанные требования, а не весь смысл запроса."
+        ],
+        "candidate_count": 27,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 20.834
+      }
+    },
+    {
+      "id": "impossible-experience",
+      "query": "Нужен Python с опытом от 50 лет",
+      "negative": true,
+      "http_status": 200,
+      "hit_at_3": null,
+      "passed": true,
+      "top3": [
+        "EXP-060",
+        "EXP-050",
+        "EXP-047"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 30.342,
+      "response": {
+        "query": "Нужен Python с опытом от 50 лет",
+        "status": "partial",
+        "parsed_query": {
+          "skills": [
+            "Python"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": 50,
+          "excluded_skills": [],
+          "unrecognized_terms": [
+            "опытом"
+          ],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-060",
+              "full_name": "Синтетический эксперт 060",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Павлодар",
+              "skills": [
+                "React",
+                "SQL",
+                "Python"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 22,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: экспертная оценка проектов. Компетенции: React, SQL, Python.",
+              "is_synthetic": true
+            },
+            "score": 59.2208,
+            "match_percent": 66.7,
+            "match_status": "partial",
+            "matched_skills": [
+              "Python"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [
+              "Опыт от 50 лет"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Python.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Опыт от 50 лет"
+            ],
+            "score_components": {
+              "bm25": 3.4217,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "python"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-050",
+              "full_name": "Синтетический эксперт 050",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Астана",
+              "skills": [
+                "React",
+                "SQL",
+                "Python"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 12,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: экспертная оценка проектов. Компетенции: React, SQL, Python.",
+              "is_synthetic": true
+            },
+            "score": 59.2208,
+            "match_percent": 66.7,
+            "match_status": "partial",
+            "matched_skills": [
+              "Python"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [
+              "Опыт от 50 лет"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Python.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Опыт от 50 лет"
+            ],
+            "score_components": {
+              "bm25": 3.4217,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "python"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-047",
+              "full_name": "Синтетический эксперт 047",
+              "title": "Инженер программных и интеллектуальных систем",
+              "industry": "IT",
+              "city": "Атырау",
+              "skills": [
+                "Python",
+                "Компьютерное зрение",
+                "MLOps"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 9,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: IT. Задачи: анализ и улучшение процессов. Компетенции: Python, Компьютерное зрение, MLOps.",
+              "is_synthetic": true
+            },
+            "score": 59.1414,
+            "match_percent": 66.7,
+            "match_status": "partial",
+            "matched_skills": [
+              "Python"
+            ],
+            "matched_industries": [],
+            "profile_industry": "IT",
+            "missing_requirements": [
+              "Опыт от 50 лет"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Python.",
+              "Отрасль профиля: IT."
+            ],
+            "warnings": [
+              "Опыт от 50 лет"
+            ],
+            "score_components": {
+              "bm25": 3.3674,
+              "skill_coverage": 1.0,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "python"
+            ]
+          }
+        ],
+        "warnings": [
+          "Полного соответствия распознанным требованиям нет. Показаны частичные совпадения.",
+          "Часть слов обработана только лексически. Процент покрывает распознанные требования, а не весь смысл запроса."
+        ],
+        "candidate_count": 21,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 24.365
+      }
+    },
+    {
+      "id": "impossible-combination",
+      "query": "GCP и пентест, обе компетенции обязательны",
+      "negative": true,
+      "http_status": 200,
+      "hit_at_3": null,
+      "passed": true,
+      "top3": [
+        "EXP-013",
+        "EXP-071",
+        "EXP-066"
+      ],
+      "false_full_against_oracle": [],
+      "elapsed_ms": 47.722,
+      "response": {
+        "query": "GCP и пентест, обе компетенции обязательны",
+        "status": "partial",
+        "parsed_query": {
+          "skills": [
+            "GCP",
+            "Пентест"
+          ],
+          "industries": [],
+          "cities": [],
+          "min_years_experience": null,
+          "excluded_skills": [],
+          "unrecognized_terms": [
+            "обе",
+            "компетенции",
+            "обязательны"
+          ],
+          "max_years_experience": null,
+          "excluded_cities": [],
+          "excluded_industries": [],
+          "errors": []
+        },
+        "results": [
+          {
+            "expert": {
+              "id": "EXP-013",
+              "full_name": "Синтетический эксперт 013",
+              "title": "Эксперт фармацевтической отрасли",
+              "industry": "Фармацевтика",
+              "city": "Алматы",
+              "skills": [
+                "GCP",
+                "Клинические исследования",
+                "Фармаконадзор"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 20,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Фармацевтика. Задачи: внедрение и проверка решений. Компетенции: GCP, Клинические исследования, Фармаконадзор.",
+              "is_synthetic": true
+            },
+            "score": 41.7553,
+            "match_percent": 50.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "GCP"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Фармацевтика",
+            "missing_requirements": [
+              "Пентест"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: GCP.",
+              "Отрасль профиля: Фармацевтика."
+            ],
+            "warnings": [
+              "Пентест"
+            ],
+            "score_components": {
+              "bm25": 5.7032,
+              "skill_coverage": 0.5,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "gcp",
+              "компетенц"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-071",
+              "full_name": "Синтетический эксперт 071",
+              "title": "Эксперт по защите информационных систем",
+              "industry": "Кибербезопасность",
+              "city": "Караганда",
+              "skills": [
+                "Пентест",
+                "Безопасность сетей",
+                "ISO 27001"
+              ],
+              "languages": [
+                "Русский",
+                "Казахский"
+              ],
+              "years_experience": 18,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Кибербезопасность. Задачи: консультирование проектных команд. Компетенции: Пентест, Безопасность сетей, ISO 27001.",
+              "is_synthetic": true
+            },
+            "score": 41.6183,
+            "match_percent": 50.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Пентест"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Кибербезопасность",
+            "missing_requirements": [
+              "GCP"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Пентест.",
+              "Отрасль профиля: Кибербезопасность."
+            ],
+            "warnings": [
+              "GCP"
+            ],
+            "score_components": {
+              "bm25": 5.5446,
+              "skill_coverage": 0.5,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "компетенц",
+              "пентест"
+            ]
+          },
+          {
+            "expert": {
+              "id": "EXP-066",
+              "full_name": "Синтетический эксперт 066",
+              "title": "Эксперт по защите информационных систем",
+              "industry": "Кибербезопасность",
+              "city": "Шымкент",
+              "skills": [
+                "Пентест",
+                "Безопасность сетей",
+                "ISO 27001"
+              ],
+              "languages": [
+                "Русский",
+                "Английский"
+              ],
+              "years_experience": 13,
+              "availability": "available",
+              "availability_label": "Доступен",
+              "bio": "Вымышленный профиль для тестирования. Направление: Кибербезопасность. Задачи: консультирование проектных команд. Компетенции: Пентест, Безопасность сетей, ISO 27001.",
+              "is_synthetic": true
+            },
+            "score": 41.6183,
+            "match_percent": 50.0,
+            "match_status": "partial",
+            "matched_skills": [
+              "Пентест"
+            ],
+            "matched_industries": [],
+            "profile_industry": "Кибербезопасность",
+            "missing_requirements": [
+              "GCP"
+            ],
+            "explanation": [
+              "В профиле указаны компетенции: Пентест.",
+              "Отрасль профиля: Кибербезопасность."
+            ],
+            "warnings": [
+              "GCP"
+            ],
+            "score_components": {
+              "bm25": 5.5446,
+              "skill_coverage": 0.5,
+              "availability_penalty": 0
+            },
+            "matched_terms": [
+              "компетенц",
+              "пентест"
+            ]
+          }
+        ],
+        "warnings": [
+          "Полного соответствия распознанным требованиям нет. Показаны частичные совпадения.",
+          "Часть слов обработана только лексически. Процент покрывает распознанные требования, а не весь смысл запроса."
+        ],
+        "candidate_count": 12,
+        "total_experts": 120,
+        "method": "bm25+skill-taxonomy-v2",
+        "semantic_embeddings_used": false,
+        "score_description": "Ранжирующий балл, не вероятность. match_percent — доля распознанных требований: компетенция весит 2, город/отрасль/опыт по 1.",
+        "is_synthetic": true,
+        "elapsed_ms": 41.222
+      }
+    }
+  ],
+  "independent_blind_benchmark": false,
+  "search_source_sha256": "43e754057d56c177a6b8a5bb57a1ffbd99332b9de8f2294043282a7fe1795a42",
+  "regression_tests_passed": 29
+}

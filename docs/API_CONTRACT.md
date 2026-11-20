@@ -1,4 +1,4 @@
-# API v1 — контракт для Алмаса
+# API v1 — контракт fullstack-интеграции
 
 Base URL: `http://127.0.0.1:8000/api/v1`. Все пути заканчиваются `/`. JSON UTF-8. Стабильная первая версия: существующие поля не переименовывать при добавлении Qwen/embeddings.
 
@@ -42,6 +42,8 @@ type SearchResponse = {
   parsed_query: {
     skills: string[]; industries: string[]; cities: string[];
     min_years_experience: number | null; excluded_skills: string[];
+    max_years_experience?: number | null; excluded_cities?: string[];
+    excluded_industries?: string[]; errors?: string[];
     unrecognized_terms: string[]; // часть условий не распознана — показать предупреждение
   };
   results: Candidate[]; warnings: string[];
@@ -89,3 +91,13 @@ CSV загружается командой `docker compose exec -T backend pyth
 `experts/search/engine.py`: `SearchEngine` выдаёт кандидатов и фактические доказательства. Будущий локальный encoder может добавить semantic score перед сортировкой, сохраняя ограничения и существующие поля. Его отсутствие/ошибка должны оставлять BM25 работоспособным. Qwen — только после проверки версии Алмасом; генеративные объяснения не должны подменять факты профиля. В первой итерации нет сетевого вызова даже на localhost к модели.
 
 Основной запуск — Docker Compose с PostgreSQL 16; SQLite не используется. API-контракт при смене БД не изменился. Данные хранятся в volume `postgres-data`, пароль и Django secret — в игнорируемой `.env`. `/health/` возвращает `database: postgresql`.
+
+## Текущий frontend
+
+React-приложение использует относительный `/api/v1/` через same-origin proxy frontend-контейнера (localhost:5173). Vite dev server проксирует туда же через localhost:8000. Пример выше с VITE_API_BASE_URL предназначен для отдельного клиента; текущая реализация не требует этой переменной. Backend API не изменён.
+
+## Условия и отрицания (v2)
+
+Добавлены совместимые поля parsed_query: max_years_experience, excluded_cities, excluded_industries и errors. Старые поля сохранены. «Не из Алматы» исключает город, «без PLC» — навык; список после отрицания ограничен ближайшими распознанными названиями. «Без PLC нужен SCADA» сохраняет SCADA как положительное условие.
+
+Опыт: «не более/до/максимум N» — включительно до N; «менее N» — до N-1; «не менее/от N» — от N; «более/свыше N» — от N+1; «от N до M лет» задаёт обе границы. Исключения работают как фильтры до ранжирования. Верхняя и нижняя границы входят в проверку покрытия и объяснения. Если минимум больше максимума, results пуст, status=no_matches, причина есть в errors и warnings. Незнакомый явно указанный город с заглавной буквы после «в/из» сохраняется как условие, поэтому кандидаты из других городов не помечаются full. Это ограниченный парсер, не универсальное понимание географии или русского языка.

@@ -1,0 +1,319 @@
+{
+  "dataset": "holdout_queries.json",
+  "query_count": 21,
+  "hit_at_3": 1.0,
+  "threshold_passed": true,
+  "network_blocked": true,
+  "latency_scope": "in-process Django API including PostgreSQL connection/queries, index construction and serialization; excludes HTTP transport",
+  "median_ms": 11.808,
+  "p95_ms": 16.675,
+  "max_ms": 42.133,
+  "under_30_seconds": true,
+  "results": [
+    {
+      "id": "paraphrase-1",
+      "query": "Кого посоветуете для clinical trials и good manufacturing practice в Almaty?",
+      "expected": [
+        "EXP-001"
+      ],
+      "top3": [
+        "EXP-001",
+        "EXP-011",
+        "EXP-006"
+      ],
+      "hit": true,
+      "elapsed_ms": 42.133
+    },
+    {
+      "id": "paraphrase-2",
+      "query": "В Алматы нужен эксперт: надлежащая производственная практика, клинические испытания",
+      "expected": [
+        "EXP-001"
+      ],
+      "top3": [
+        "EXP-001",
+        "EXP-011",
+        "EXP-006"
+      ],
+      "hit": true,
+      "elapsed_ms": 12.006
+    },
+    {
+      "id": "paraphrase-3",
+      "query": "В Астане ищем специалиста по программированию контроллеров и скада",
+      "expected": [
+        "EXP-016"
+      ],
+      "top3": [
+        "EXP-016",
+        "EXP-026",
+        "EXP-021"
+      ],
+      "hit": true,
+      "elapsed_ms": 12.423
+    },
+    {
+      "id": "paraphrase-4",
+      "query": "ПЛК, диспетчеризация производства, Астана — нужен опыт от 5 лет",
+      "expected": [
+        "EXP-016"
+      ],
+      "top3": [
+        "EXP-016",
+        "EXP-026",
+        "EXP-021"
+      ],
+      "hit": true,
+      "elapsed_ms": 12.235
+    },
+    {
+      "id": "paraphrase-5",
+      "query": "В Караганде требуются САПР и метод конечных элементов",
+      "expected": [
+        "EXP-031"
+      ],
+      "top3": [
+        "EXP-031",
+        "EXP-041",
+        "EXP-036"
+      ],
+      "hit": true,
+      "elapsed_ms": 11.704
+    },
+    {
+      "id": "paraphrase-6",
+      "query": "Кто поможет: finite element analysis, проектирование деталей, Karaganda",
+      "expected": [
+        "EXP-031"
+      ],
+      "top3": [
+        "EXP-031",
+        "EXP-041",
+        "EXP-036"
+      ],
+      "hit": true,
+      "elapsed_ms": 11.222
+    },
+    {
+      "id": "paraphrase-7",
+      "query": "Для обработки естественного языка ищу человека с питоном, Шымкент",
+      "expected": [
+        "EXP-046"
+      ],
+      "top3": [
+        "EXP-046",
+        "EXP-056",
+        "EXP-051"
+      ],
+      "hit": true,
+      "elapsed_ms": 11.43
+    },
+    {
+      "id": "paraphrase-8",
+      "query": "NLP и Python, Shymkent, минимум 7 лет",
+      "expected": [
+        "EXP-046"
+      ],
+      "top3": [
+        "EXP-046",
+        "EXP-056",
+        "EXP-051"
+      ],
+      "hit": true,
+      "elapsed_ms": 11.365
+    },
+    {
+      "id": "paraphrase-9",
+      "query": "Тестирование на проникновение и защита сетей в Атырау",
+      "expected": [
+        "EXP-061"
+      ],
+      "top3": [
+        "EXP-061",
+        "EXP-071",
+        "EXP-066"
+      ],
+      "hit": true,
+      "elapsed_ms": 12.743
+    },
+    {
+      "id": "paraphrase-10",
+      "query": "Атырау, pentest и network security",
+      "expected": [
+        "EXP-061"
+      ],
+      "top3": [
+        "EXP-061",
+        "EXP-071",
+        "EXP-066"
+      ],
+      "hit": true,
+      "elapsed_ms": 11.808
+    },
+    {
+      "id": "paraphrase-11",
+      "query": "В Павлодаре ищем СДО и instructional design",
+      "expected": [
+        "EXP-076"
+      ],
+      "top3": [
+        "EXP-076",
+        "EXP-089",
+        "EXP-086"
+      ],
+      "hit": true,
+      "elapsed_ms": 12.427
+    },
+    {
+      "id": "paraphrase-12",
+      "query": "Педагогический дизайн и система дистанционного обучения, Павлодар",
+      "expected": [
+        "EXP-076"
+      ],
+      "top3": [
+        "EXP-076",
+        "EXP-089",
+        "EXP-086"
+      ],
+      "hit": true,
+      "elapsed_ms": 10.68
+    },
+    {
+      "id": "paraphrase-13",
+      "query": "Аудитор СМК и технических регламентов, Астана",
+      "expected": [
+        "EXP-106"
+      ],
+      "top3": [
+        "EXP-106",
+        "EXP-116",
+        "EXP-111"
+      ],
+      "hit": true,
+      "elapsed_ms": 10.025
+    },
+    {
+      "id": "paraphrase-14",
+      "query": "Нужен в Astana: ISO 9001 и EAC",
+      "expected": [
+        "EXP-106"
+      ],
+      "top3": [
+        "EXP-106",
+        "EXP-116",
+        "EXP-111"
+      ],
+      "hit": true,
+      "elapsed_ms": 10.285
+    },
+    {
+      "id": "novel-1",
+      "query": "GMP и валидация процессов, Астана",
+      "expected": [
+        "EXP-002"
+      ],
+      "top3": [
+        "EXP-002",
+        "EXP-012",
+        "EXP-010"
+      ],
+      "hit": true,
+      "elapsed_ms": 10.321
+    },
+    {
+      "id": "novel-2",
+      "query": "Прогнозирование поломок и IIoT в Атырау",
+      "expected": [
+        "EXP-019"
+      ],
+      "top3": [
+        "EXP-019",
+        "EXP-094",
+        "EXP-104"
+      ],
+      "hit": true,
+      "elapsed_ms": 11.411
+    },
+    {
+      "id": "novel-3",
+      "query": "Возобновляемая энергетика и ESG, Атырау",
+      "expected": [
+        "EXP-033"
+      ],
+      "top3": [
+        "EXP-033",
+        "EXP-038",
+        "EXP-043"
+      ],
+      "hit": true,
+      "elapsed_ms": 11.934
+    },
+    {
+      "id": "novel-4",
+      "query": "SQL и ETL, Павлодар",
+      "expected": [
+        "EXP-048"
+      ],
+      "top3": [
+        "EXP-048",
+        "EXP-060",
+        "EXP-058"
+      ],
+      "hit": true,
+      "elapsed_ms": 10.366
+    },
+    {
+      "id": "novel-5",
+      "query": "SOC и Python в Павлодаре",
+      "expected": [
+        "EXP-062"
+      ],
+      "top3": [
+        "EXP-062",
+        "EXP-072",
+        "EXP-067"
+      ],
+      "hit": true,
+      "elapsed_ms": 15.782
+    },
+    {
+      "id": "novel-6",
+      "query": "Робототехника и STEM в Алматы",
+      "expected": [
+        "EXP-077"
+      ],
+      "top3": [
+        "EXP-077",
+        "EXP-087",
+        "EXP-082"
+      ],
+      "hit": true,
+      "elapsed_ms": 16.675
+    },
+    {
+      "id": "novel-7",
+      "query": "Бережливое производство и шесть сигм в Алматы",
+      "expected": [
+        "EXP-091"
+      ],
+      "top3": [
+        "EXP-091",
+        "EXP-101",
+        "EXP-096"
+      ],
+      "hit": true,
+      "elapsed_ms": 12.896
+    }
+  ],
+  "negative_results": [
+    {
+      "query": "Нужен специалист по квантовой телепортации",
+      "passed": true
+    },
+    {
+      "query": "Эксперт по археологии майя",
+      "passed": true
+    }
+  ],
+  "limitation": "Team-authored synthetic data and labels. Does not establish accuracy on unseen jury queries."
+}

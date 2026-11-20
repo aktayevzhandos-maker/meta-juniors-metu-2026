@@ -1,0 +1,359 @@
+{
+  "dataset_sha256": "ec8e9e8367de30c1c76ddac697cab1aa8c5f50a18b4e1f6ea2ee1fd03872ec54",
+  "cases": [
+    {
+      "id": "quality-lean",
+      "query": "Бережливое производство и ISO 9001, Алматы",
+      "skills": [
+        "Lean",
+        "ISO 9001"
+      ],
+      "city": "Алматы",
+      "relevant_ids": [
+        "EXP-091"
+      ]
+    },
+    {
+      "id": "clinical-gcp",
+      "query": "Клинические испытания по GCP в Караганде",
+      "skills": [
+        "Клинические исследования",
+        "GCP"
+      ],
+      "city": "Караганда",
+      "relevant_ids": [
+        "EXP-003"
+      ]
+    },
+    {
+      "id": "drug-registration",
+      "query": "Регистрация препаратов и фармаконадзор, Шымкент",
+      "skills": [
+        "Регистрация лекарств",
+        "Фармаконадзор"
+      ],
+      "city": "Шымкент",
+      "relevant_ids": [
+        "EXP-004"
+      ]
+    },
+    {
+      "id": "industrial-security",
+      "query": "SCADA и защита АСУ ТП в Шымкенте",
+      "skills": [
+        "SCADA",
+        "Безопасность АСУ ТП"
+      ],
+      "city": "Шымкент",
+      "relevant_ids": [
+        "EXP-018"
+      ]
+    },
+    {
+      "id": "vision",
+      "query": "Python и распознавание дефектов, Атырау",
+      "skills": [
+        "Python",
+        "Компьютерное зрение"
+      ],
+      "city": "Атырау",
+      "relevant_ids": [
+        "EXP-047"
+      ]
+    },
+    {
+      "id": "deployment",
+      "query": "K8s и внедрение моделей в Алматы",
+      "skills": [
+        "Kubernetes",
+        "MLOps"
+      ],
+      "city": "Алматы",
+      "relevant_ids": [
+        "EXP-049"
+      ]
+    },
+    {
+      "id": "stem",
+      "query": "Инженерное образование и робототехника, Алматы",
+      "skills": [
+        "STEM",
+        "Робототехника"
+      ],
+      "city": "Алматы",
+      "relevant_ids": [
+        "EXP-077"
+      ]
+    },
+    {
+      "id": "food-safety",
+      "query": "HACCP и производственный аудит в Астане",
+      "skills": [
+        "HACCP",
+        "Аудит производства"
+      ],
+      "city": "Астана",
+      "relevant_ids": [
+        "EXP-092",
+        "EXP-112"
+      ]
+    },
+    {
+      "id": "certification",
+      "query": "ISO 27001 и EAC, Атырау",
+      "skills": [
+        "ISO 27001",
+        "Сертификация ЕАЭС"
+      ],
+      "city": "Атырау",
+      "relevant_ids": [
+        "EXP-109"
+      ]
+    },
+    {
+      "id": "senior-nlp",
+      "query": "NLP и Python, минимум 18 лет",
+      "skills": [
+        "NLP",
+        "Python"
+      ],
+      "city": null,
+      "min_years": 18,
+      "relevant_ids": [
+        "EXP-056"
+      ]
+    },
+    {
+      "id": "senior-pharma",
+      "query": "GMP в фармацевтике от 18 лет",
+      "skills": [
+        "GMP"
+      ],
+      "city": null,
+      "industry": "Фармацевтика",
+      "min_years": 18,
+      "relevant_ids": [
+        "EXP-011",
+        "EXP-012",
+        "EXP-014",
+        "EXP-015"
+      ]
+    },
+    {
+      "id": "alternative",
+      "query": "Нужен SCADA или PLC",
+      "skills": [
+        "SCADA",
+        "PLC"
+      ],
+      "city": null,
+      "any_skill": true,
+      "relevant_ids": [
+        "EXP-016",
+        "EXP-017",
+        "EXP-018",
+        "EXP-020",
+        "EXP-021",
+        "EXP-022",
+        "EXP-023",
+        "EXP-025",
+        "EXP-026",
+        "EXP-027",
+        "EXP-028",
+        "EXP-030"
+      ]
+    },
+    {
+      "id": "strict-city",
+      "query": "Только Алматы, нужен ISO 9001",
+      "skills": [
+        "ISO 9001"
+      ],
+      "city": "Алматы",
+      "relevant_ids": [
+        "EXP-035",
+        "EXP-091",
+        "EXP-097",
+        "EXP-111",
+        "EXP-117"
+      ]
+    },
+    {
+      "id": "excluded-city",
+      "query": "GMP, но не из Алматы",
+      "skills": [
+        "GMP"
+      ],
+      "city": null,
+      "excluded_city": "Алматы",
+      "relevant_ids": [
+        "EXP-002",
+        "EXP-004",
+        "EXP-005",
+        "EXP-006",
+        "EXP-009",
+        "EXP-010",
+        "EXP-011",
+        "EXP-012",
+        "EXP-014",
+        "EXP-015",
+        "EXP-110",
+        "EXP-115",
+        "EXP-120"
+      ]
+    },
+    {
+      "id": "max-experience",
+      "query": "GMP, опыт не более 10 лет",
+      "skills": [
+        "GMP"
+      ],
+      "city": null,
+      "max_years": 10,
+      "relevant_ids": [
+        "EXP-001",
+        "EXP-002"
+      ]
+    },
+    {
+      "id": "exclusion-tail",
+      "query": "SCADA без PLC",
+      "skills": [
+        "SCADA"
+      ],
+      "city": null,
+      "excluded_skills": [
+        "PLC"
+      ],
+      "relevant_ids": [
+        "EXP-018",
+        "EXP-023",
+        "EXP-028"
+      ]
+    },
+    {
+      "id": "exclusion-front",
+      "query": "Без PLC нужен специалист по SCADA",
+      "skills": [
+        "SCADA"
+      ],
+      "city": null,
+      "excluded_skills": [
+        "PLC"
+      ],
+      "relevant_ids": [
+        "EXP-018",
+        "EXP-023",
+        "EXP-028"
+      ]
+    },
+    {
+      "id": "industry-exclusion",
+      "query": "Фармацевтика от 5 лет без Python",
+      "skills": [],
+      "city": null,
+      "industry": "Фармацевтика",
+      "min_years": 5,
+      "excluded_skills": [
+        "Python"
+      ],
+      "relevant_ids": [
+        "EXP-001",
+        "EXP-002",
+        "EXP-003",
+        "EXP-004",
+        "EXP-005",
+        "EXP-006",
+        "EXP-007",
+        "EXP-008",
+        "EXP-009",
+        "EXP-010",
+        "EXP-011",
+        "EXP-012",
+        "EXP-013",
+        "EXP-014",
+        "EXP-015"
+      ]
+    },
+    {
+      "id": "learning",
+      "query": "СДО и дизайн обучения в Атырау",
+      "skills": [
+        "LMS",
+        "Instructional Design"
+      ],
+      "city": "Атырау",
+      "relevant_ids": [
+        "EXP-081"
+      ]
+    },
+    {
+      "id": "frontend",
+      "query": "Нужен разработчик интерфейсов на React",
+      "skills": [
+        "React"
+      ],
+      "city": null,
+      "relevant_ids": [
+        "EXP-050",
+        "EXP-055",
+        "EXP-060"
+      ]
+    },
+    {
+      "id": "unknown-city",
+      "query": "GMP в Ташкенте",
+      "skills": [
+        "GMP"
+      ],
+      "city": "Ташкент",
+      "negative": true,
+      "relevant_ids": []
+    },
+    {
+      "id": "unknown-specialty",
+      "query": "Нужен специалист по квантовой криптографии в Астане",
+      "skills": [
+        "Квантовая криптография"
+      ],
+      "city": "Астана",
+      "negative": true,
+      "relevant_ids": []
+    },
+    {
+      "id": "impossible-skills",
+      "query": "Обязательно одновременно GMP, SCADA и BIM",
+      "skills": [
+        "GMP",
+        "SCADA",
+        "BIM"
+      ],
+      "city": null,
+      "negative": true,
+      "relevant_ids": []
+    },
+    {
+      "id": "impossible-experience",
+      "query": "Нужен Python с опытом от 50 лет",
+      "skills": [
+        "Python"
+      ],
+      "city": null,
+      "min_years": 50,
+      "negative": true,
+      "relevant_ids": []
+    },
+    {
+      "id": "impossible-combination",
+      "query": "GCP и пентест, обе компетенции обязательны",
+      "skills": [
+        "GCP",
+        "Пентест"
+      ],
+      "city": null,
+      "negative": true,
+      "relevant_ids": []
+    }
+  ],
+  "provenance": "Team-authored stress set; author saw implementation. Expectations frozen before HTTP calls, no tuning during run."
+}
