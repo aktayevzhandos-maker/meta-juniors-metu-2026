@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-11-20",
+  "tested_commit": "6cd74ee",
+  "branch_at_verification": "integration/aiid-rag",
+  "scope": "Integration branch exported to a temporary directory; backend tests and evaluation used isolated PostgreSQL test databases. Working application database was preserved.",
+  "backend_tests": {"passed": 44, "total": 44, "duration_seconds": 2.270},
+  "frontend_build": {"passed": true, "checks": ["tsc --noEmit", "vite build"], "warning": "Lazy BI chart bundle exceeds Vite's 500 kB size warning threshold."},
+  "evaluations": [
+    {"dataset": "data/reference_queries.json", "query_count": 7, "hit_at_3": 1.0, "median_ms": 17.995, "max_ms": 47.777, "negative_results": []},
+    {"dataset": "data/holdout_queries.json", "query_count": 21, "hit_at_3": 1.0, "median_ms": 17.405, "max_ms": 23.382, "negative_results": [
+      {"query": "Нужен специалист по квантовой телепортации", "passed": true},
+      {"query": "Эксперт по археологии майя", "passed": true}
+    ]}
+  ],
+  "latency_scope": "In-process Django API with PostgreSQL, index construction, serialization and analytics writes; excludes HTTP transport and Qwen comparison.",
+  "limitations": ["Team-authored synthetic data and query labels; not an independent blind benchmark.", "No browser end-to-end or physical offline check of the integration branch was performed on this laptop."],
+  "qwen": {"tested_on_this_laptop": false, "team_confirmation": "User confirmed on 2026-11-20 that Qwen works on the demonstration laptop; repeated local model verification was explicitly excluded.", "latency_measured_here": false}
+}
