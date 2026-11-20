@@ -81,7 +81,7 @@ def write_registry(path, seed=2026):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     rows = generate_rows(seed)
-    with path.open('w', encoding='utf-8', newline='') as stream:
+    with path.open('w', encoding='utf-8-sig', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS)
         writer.writeheader()
         writer.writerows(rows)
